@@ -1,0 +1,19 @@
+/node_modules
+
+### Sass ###
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+### vscode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache

@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "flaticon";
+  src: url("/flaticon.443a7a2d.ttf?62c9f2bea8ac383c49622e990c4498b4") format("truetype"), url("/flaticon.47b9881d.woff?62c9f2bea8ac383c49622e990c4498b4") format("woff"), url("/flaticon.ea7b0f4f.woff2?62c9f2bea8ac383c49622e990c4498b4") format("woff2"), url("/flaticon.b410a2fe.eot?62c9f2bea8ac383c49622e990c4498b4#iefix") format("embedded-opentype"), url("/flaticon.4fe409f1.svg?62c9f2bea8ac383c49622e990c4498b4#flaticon") format("svg");
+}
+i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
+  font-family: flaticon !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-care:before {
+  content: "";
+}
+
+.flaticon-dog:before {
+  content: "";
+}
+
+.flaticon-mortarboard:before {
+  content: "";
+}
+
+.flaticon-pawprint:before {
+  content: "";
+}
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Merriweather:wght@400&display=swap");
+/*# sourceMappingURL=/main.48b3db1d.css.map */
