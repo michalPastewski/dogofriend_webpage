@@ -96,6 +96,7 @@ i {
 .hero {
   width: 100vw;
   height: 100vh;
+  box-shadow: 0 0 2px 4px rgba(60, 81, 102, 0.25);
 }
 .hero__banner {
   position: relative;
@@ -117,6 +118,7 @@ i {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  transform: translateY(1px);
 }
 .hero__banner__title--text {
   padding-left: 13px;
@@ -128,9 +130,8 @@ i {
   height: 10vh;
   font-size: 35px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 34px;
 }
 
 .education {

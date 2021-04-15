@@ -55,6 +55,7 @@ i {
 .hero {
   width: 100vw;
   height: 100vh;
+  box-shadow: 0 0 2px 4px $border-light-c;
 
   &__banner {
     position: relative;
@@ -77,6 +78,7 @@ i {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      transform: translateY(1px);
 
       &--text {
         padding-left: $normal-g;
@@ -92,9 +94,9 @@ i {
     font-size: $large-f;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    gap: $extra-big-g;
+    // gap: $extra-big-g;
   }
 }
 
