@@ -1,0 +1,19 @@
+@use './variables' as *;
+
+%btn {
+  min-height: $min-height;
+  padding: $small-g $normal-g;
+  border: solid 2px $border-light-c;
+  border-radius: $radius-size;
+  color: $font-c;
+
+  &:hover {
+    background-color: $hover-button-s;
+    border: solid 2px $border-dark-c;
+  }
+  &:active {
+    background-color: $active-button-c;
+    border: solid 2px $border-dark-c;
+  }
+}
+

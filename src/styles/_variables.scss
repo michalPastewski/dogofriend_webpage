@@ -1,21 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Merriweather:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Merriweather:wght@400,700&display=swap");
 
 $header-font: "Merriweather", serif;
 $text-font: "Lato", sans-serif;
 
 //font sizings
-$extra-large: 55px;
-$large: 34px;
-$normal: 21px;
-$small: 13px;
-$extra-small: 5px;
+$extra-large-f: 48px;
+$large-f: 35px;
+$normal-f: 25px;
+$small-f: 16px;
+$extra-small-f: 8px;
 
 //gap sizings
-$extra-big-gap: 34px;
-$big-gap: 21px;
-$normal-gap: 13px;
-$small-gap: 8px;
-$extra-small-gap: 3px;
+$extra-big-g: 34px;
+$big-g: 21px;
+$normal-g: 13px;
+$small-g: 8px;
+$extra-small-g: 3px;
+
+//boredr sizing
+$normal-height: 60px;
+$min-height: 40px;
+$radius-size: 3px;
 
 /*======== pallet ========= */
 
@@ -29,7 +34,7 @@ $hover-button-s: #c2d5c7;
 $active-button-c: #ffa17a;
 
 //border color
-$border-dark-c: #467b9b;
+$border-dark-c: #3c5166;
 $border-light-c: rgba(60, 81, 102, 0.25);
 $font-c: #06281f;
 
@@ -58,5 +63,5 @@ $footer-gradient: linear-gradient(
 );
 
 //shadows
-$box-shadow:  0px 4px 4px $border-dark-c;
+$box-shadow:  0px 4px 4px 1px $border-dark-c;
 $image-shadow: 0px 6px 10px 2px rgba(60, 81, 102, 0.25);

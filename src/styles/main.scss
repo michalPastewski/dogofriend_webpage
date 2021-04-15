@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use './components' as *;
 @import url("../assets/icons/font/flaticon.scss");
 
 //simple normalize
@@ -21,11 +22,19 @@ p {
   outline: 0;
 }
 
+i {
+  line-height: 0;
+}
+
+//======================
+
 .container {
   width: min(1920px, 100vw);
   background-color: $base-c;
   font-family: $text-font;
+  font-size: $normal-f;
   color: $font-c;
+  line-height: 1.2;
 }
 
 .navigation {
@@ -39,42 +48,125 @@ p {
   &__logo {
     width: clamp(42px, 5vw, 80px);
     height: 50px;
-    margin-top: $small-gap;
+    margin-top: $small-g;
   }
 }
 
 .hero {
-  position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url("../assets/image/samba_dog_portrait_leaf_background_320px.PNG");
-  background-size: cover;
-  background-position: top;
-  // clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, 0 60%);
 
-  &__title {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 40%;
-    padding-bottom: $small-gap ;
-    background-color: $base-c;
-    font-size: $normal;
+  &__banner {
+    position: relative;
+    width: 100vw;
+    height: 90vh;
+    background-image: url("../assets/image/samba_dog_portrait_leaf_background_320px.PNG");
+    background-size: cover;
+    background-position: top;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    &__title {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 42%;
+      padding-bottom: $small-g;
+      background-color: $base-c;
+      clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%, 0 0);
 
-    clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%, 0 0);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
 
-    &-text {
-      padding-left: $normal-gap;
+      &--text {
+        padding-left: $normal-g;
+        font-family: $header-font;
+        font-size: $large-f;
+        letter-spacing: $small-g;
+      }
     }
   }
 
-  // &__img {
-  //   width: 100%;
-  //   height: 100%;
-  // }
+  &__icons {
+    height: 10vh;
+    font-size: $large-f;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $extra-big-g;
+  }
+}
+
+.education {
+  width: 100%;
+  margin: $extra-big-g auto;
+
+  &__title {
+    width: 50%;
+    padding: $small-g;
+    background-image: $header-gradient;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &--icon {
+      font-size: $normal-f + 10px;
+      color: $light-c;
+    }
+    &--text {
+      font-family: $header-font;
+      font-size: $normal-f;
+      font-weight: 400;
+      letter-spacing: $extra-small-g;
+      color: $base-c;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    margin-top: $big-g;
+
+    &__card {
+      width: 80%;
+      margin: 0 auto;
+      padding: $small-g;
+      border: solid 1px $border-dark-c;
+      border-radius: $radius-size;
+      text-align: center;
+      transition: box-shadow .3s ease;
+
+      display: flex;
+      flex-direction: column;
+
+      &:hover {
+        box-shadow: $box-shadow;
+        transition: box-shadow .3s ease;
+      }
+
+      &--title {
+        min-height: 76px;
+        padding: $small-g;
+        font-family: $header-font;
+        font-size: $normal-f;
+        letter-spacing: $extra-small-g;
+      }
+
+      &--text {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: $small-f;
+      }
+
+      &--button {
+        @extend %btn;
+        min-width: 30%;
+        margin: $normal-g $normal-g $extra-small-g 0;
+        align-self: flex-end;
+        font-size: $small-f;
+      }
+    }
+  }
 }
