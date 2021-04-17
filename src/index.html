@@ -9,80 +9,95 @@
   <link rel="stylesheet" href="./styles/main.scss">
 </head>
 
-<body>
-  <div class="container">
-    <nav class="navigation">
-      <img class="navigation__logo" src="./assets/logo_dogofriend.svg" alt="dogofriend_logo">
-    </nav>
+<body class="container">
+  <!-- <div class="container"> -->
+  <nav class="navigation">
+    <figure class="navigation__logo">
+      <img class="navigation__logo--img" src="./assets/logo_dogofriend.svg" alt="dogofriend_logo">
+    </figure>
+  </nav>
 
-    <header class="hero">
-      <div class="hero__banner">
-        <div class="hero__banner__title">
-          <h1 class="hero__banner__title--text">życie</h1>
-          <h1 class="hero__banner__title--text">z psem</h1>
-          <h1 class="hero__banner__title--text">jest lepsze</h1>
-        </div>
+  <header class="hero">
+    <div class="hero__banner">
+      <div class="hero__banner__title">
+        <h1 class="hero__banner__title--text">życie</h1>
+        <h1 class="hero__banner__title--text">z psem</h1>
+        <h1 class="hero__banner__title--text">jest lepsze</h1>
       </div>
-      <div class="hero__icons">
-        <i class="flaticon-dog"></i>
-        <i class="flaticon-mortarboard"></i>
-        <i class="flaticon-care"></i>
-        <i class="flaticon-pawprint"></i>
+    </div>
+    <div class="hero__icons">
+      <i class="flaticon-dog"></i>
+      <i class="flaticon-mortarboard"></i>
+      <i class="flaticon-care"></i>
+      <i class="flaticon-pawprint"></i>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <article class="education">
+      <header class="education__title">
+        <i class="education__title--icon flaticon-mortarboard"></i>
+        <h2 class="education__title--text">edukacja</h2>
+      </header>
+
+      <div class="education__content">
+        <section class="education__content__card">
+          <h3 class="education__content__card--title">Poznajmy Psi Świat</h3>
+          <input type="checkbox" class="education__content__card--checkbox" id='education__card__checkbox--1'/>
+          <p class="education__content__card--text">
+            Program zajęć realizowany w żłobkach. Dzieci zapoznają się z psem, jego wyglądem, zachowaniem i
+            zwyczajami. <br><br>
+            Podczas spotkań mają szanse doświadczyć bliskiej obecności zwierzęcia, przezwyciężyć swoje lenki -
+            dotknąć, pogłaskać, przytulić. Zajęcia nie tylko uczą ale i aktywizują dzieciaki - między innymi
+            przeciągamy, skaczemy i maszerujemy z psem na spacer w poszukiwaniu smaczków. Prewencja pogryzień - czyli
+            dlaczego nie podchodzimy do obcego psa.
+          </p>
+          <label for="education__card__checkbox--1" class="education__content__card--button"></label>
+          <!-- <button class="education__content__card--button">szcegóły</button> -->
+        </section>
+
+        <section class="education__content__card">
+          <h3 class="education__content__card--title">Człowiek Przyjaciel Psa</h3>
+          <input type="checkbox" class="education__content__card--checkbox" id='education__card__checkbox--2'/>
+          <p class="education__content__card--text">
+            Program zajęć realizowany w przedszkolach i klasach I-III szkoły podstawowej. Uczestnicy poznają bliżej
+            relacje z psem. <br><br>
+            Dowiadują się jak postępować podczas kontaktów z psem oraz jak reagować gdy zwierzę zachowuje się agresywnie. Dzieciaki uczą się humanitarnego podejścia do psich przyjaciół. Poznają zawody jakie mogą wykonywać w świecie ludzi i dowiadują się jak dbać o zwierzęta domowe.
+            </p>
+            <label for="education__card__checkbox--2" class="education__content__card--button"></label>
+          <!-- <button class="education__content__card--button">szcegóły</button> -->
+        </section>
+
+        <section class="education__content__card">
+          <h3 class="education__content__card--title">Mój Pierwszy Pies</h3>
+          <input type="checkbox" class="education__content__card--checkbox" id='education__card__checkbox--3'/>
+          <p class="education__content__card--text">
+            Cykl zajęć kierowany do osób i rodzin przygotowujących się do przyjęcia czworonoga w rodzinie. <br><br>
+            Rola psa w życiu człowieka, czyli oswojenie z psem, zapoznanie z potrzebami szczeniaka i psa dorosłego, zwyczajami i typowymi zachowaniami. Nauka właściwego podejścia do treningu i wychowania psa, prezentacja czynności pielęgnacyjnych oraz komend przydatnych na co dzień. Spacery i ich rola socjalizacyjna. Edukacja humanitarna oraz promocja pozytywnego wzmacniania w relacjach ze zwierzętami.
+          </p>
+          <label for="education__card__checkbox--3" class="education__content__card--button"></label>
+          <!-- <button class="education__content__card--button">szcegóły</button> -->
+        </section>
+
+        <section class="education__content__card">
+          <h3 class="education__content__card--title">Spotkanie z Psem</h3>
+          <input type="checkbox" class="education__content__card--checkbox" id='education__card__checkbox--4'/>
+          <p class="education__content__card--text">
+            Zajęcia pokazowe kierowane do różnych placówek. Uczestnicy mogą doświadczyć obecności psa w bezpiecznym
+            miejscu i warunkach. <br><br>
+            Zajęcia mają na celu pokazać uczestnikom w jaki sposób należy postępować z psem i jakich zachowań możemy spodziewać się po zwierzaku. Zajęcia obejmuję pokaz, naukę zachowanie podczas spotkania z psem i możliwość wspólnej zabawy.
+          </p>
+            <label for="education__card__checkbox--4" class="education__content__card--button"></label>
+          <!-- <button class="education__content__card--button">szcegóły</button> --> 
+        </section>
       </div>
-    </header>
 
-    <main class="main">
+    </article>
 
-      <article class="education">
-        <header class="education__title">
-          <i class="education__title--icon flaticon-mortarboard"></i>
-          <h2 class="education__title--text">edukacja</h2>
-        </header>
+  </main>
 
-        <section class="education__content">
-          <div class="education__content__card">
-            <h3 class="education__content__card--title">Poznajmy Psi Świat</h3>
-            <p class="education__content__card--text">
-              Program zajęć realizowany w żłobkach. Dzieci zapoznają się z psem, jego wyglądem, zachowaniem i
-              zwyczajami.
-            </p>
-            <button class="education__content__card--button">szcegóły</button>
-          </div>
-        </section>
-
-        <section class="education__content">
-          <div class="education__content__card">
-            <h3 class="education__content__card--title">Człowiek Przyjaciel Psa</h3>
-            <p class="education__content__card--text">
-              Program zajęć realizowany w przedszkolach i klasach I-III szkoły podstawowej. Uczestnicy poznają bliżej relacje z psem.            </p>
-            <button class="education__content__card--button">szcegóły</button>
-          </div>
-        </section>
-
-        <section class="education__content">
-          <div class="education__content__card">
-            <h3 class="education__content__card--title">Mój Pierwszy Pies</h3>
-            <p class="education__content__card--text">
-              Cykl zajęć kierowany do osób i rodzin przygotowujących się do przyjęcia czworonoga w rodzinie.
-            </p>
-            <button class="education__content__card--button">szcegóły</button>
-          </div>
-        </section>
-
-        <section class="education__content">
-          <div class="education__content__card">
-            <h3 class="education__content__card--title">Spotkanie z Psem</h3>
-            <p class="education__content__card--text">
-              Zajęcia pokazowe kierowane do różnych placówek. Uczestnicy mogą doświadczyć obecności psa w bezpiecznym miejscu.             </p>
-            <button class="education__content__card--button">szcegóły</button>
-          </div>
-        </section>
-
-      </article>
-
-    </main>
-
-  </div>
+  <!-- </div> -->
 
 </body>
 

@@ -10,6 +10,8 @@ body,
 button,
 ol,
 ul,
+li,
+figure,
 h1,
 h2,
 h3,
@@ -29,7 +31,6 @@ i {
 //======================
 
 .container {
-  width: min(1920px, 100vw);
   background-color: $base-c;
   font-family: $text-font;
   font-size: $normal-f;
@@ -46,9 +47,11 @@ i {
   z-index: 10;
 
   &__logo {
-    width: clamp(42px, 5vw, 80px);
-    height: 50px;
     margin-top: $small-g;
+    &--img {
+      width: clamp(42px, 5vw, 80px);
+    height: 50px;
+    }
   }
 }
 
@@ -100,6 +103,11 @@ i {
   }
 }
 
+.main {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 .education {
   width: 100%;
   margin: $extra-big-g auto;
@@ -129,21 +137,29 @@ i {
     width: 100%;
     margin-top: $big-g;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $big-g;
+    flex-direction: column;
+
+
     &__card {
       width: 80%;
       margin: 0 auto;
       padding: $small-g;
-      border: solid 1px $border-dark-c;
+      border: solid 1px transparent;
       border-radius: $radius-size;
       text-align: center;
-      transition: box-shadow .3s ease;
+      box-shadow: $box-shadow;
+      transition: border .3s ease;
 
       display: flex;
       flex-direction: column;
 
       &:hover {
-        box-shadow: $box-shadow;
-        transition: box-shadow .3s ease;
+        border: solid 1px $border-dark-c;
+        transition: border .3s ease;
       }
 
       &--title {
@@ -152,6 +168,10 @@ i {
         font-family: $header-font;
         font-size: $normal-f;
         letter-spacing: $extra-small-g;
+      }
+
+      &--checkbox {
+        display: none;
       }
 
       &--text {
@@ -163,12 +183,28 @@ i {
       }
 
       &--button {
+        // position: relative;
         @extend %btn;
         min-width: 30%;
         margin: $normal-g $normal-g $extra-small-g 0;
         align-self: flex-end;
         font-size: $small-f;
       }
+
+      &--checkbox:checked  ~ &--text {
+        -webkit-line-clamp: initial;
+        -webkit-box-orient: vertical;
+        overflow: visible;
+      }
+
+      &--checkbox ~ &--button::after {
+        content: 'szczegóły'
+      }
+
+      &--checkbox:checked ~ &--button::after {
+        content: 'schowaj'
+      }
     }
   }
 }
+

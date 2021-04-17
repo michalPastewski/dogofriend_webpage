@@ -29,10 +29,10 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 .flaticon-pawprint:before {
   content: "";
 }
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Merriweather:wght@400,700&display=swap");
 /*======== pallet ========= */
 .education__content__card--button {
-  min-height: 40px;
   padding: 8px 13px;
   border: solid 2px rgba(60, 81, 102, 0.25);
   border-radius: 3px;
@@ -54,6 +54,8 @@ body,
 button,
 ol,
 ul,
+li,
+figure,
 h1,
 h2,
 h3,
@@ -71,7 +73,6 @@ i {
 }
 
 .container {
-  width: min(1920px, 100vw);
   background-color: #fff;
   font-family: "Lato", sans-serif;
   font-size: 25px;
@@ -88,9 +89,11 @@ i {
   z-index: 10;
 }
 .navigation__logo {
+  margin-top: 8px;
+}
+.navigation__logo--img {
   width: clamp(42px, 5vw, 80px);
   height: 50px;
-  margin-top: 8px;
 }
 
 .hero {
@@ -134,6 +137,11 @@ i {
   align-items: center;
 }
 
+.main {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 .education {
   width: 100%;
   margin: 34px auto;
@@ -160,21 +168,27 @@ i {
 .education__content {
   width: 100%;
   margin-top: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 21px;
+  flex-direction: column;
 }
 .education__content__card {
   width: 80%;
   margin: 0 auto;
   padding: 8px;
-  border: solid 1px #3c5166;
+  border: solid 1px transparent;
   border-radius: 3px;
   text-align: center;
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0px 4px 4px 0px #467B9B;
+  transition: border 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 .education__content__card:hover {
-  box-shadow: 0px 4px 4px 1px #3c5166;
-  transition: box-shadow 0.3s ease;
+  border: solid 1px #3c5166;
+  transition: border 0.3s ease;
 }
 .education__content__card--title {
   min-height: 76px;
@@ -182,6 +196,9 @@ i {
   font-family: "Merriweather", serif;
   font-size: 25px;
   letter-spacing: 3px;
+}
+.education__content__card--checkbox {
+  display: none;
 }
 .education__content__card--text {
   display: -webkit-box;
@@ -195,6 +212,17 @@ i {
   margin: 13px 13px 3px 0;
   align-self: flex-end;
   font-size: 16px;
+}
+.education__content__card--checkbox:checked ~ .education__content__card--text {
+  -webkit-line-clamp: initial;
+  -webkit-box-orient: vertical;
+  overflow: visible;
+}
+.education__content__card--checkbox ~ .education__content__card--button::after {
+  content: "szczegóły";
+}
+.education__content__card--checkbox:checked ~ .education__content__card--button::after {
+  content: "schowaj";
 }
 
 /*# sourceMappingURL=/main.48b3db1d.css.map */
