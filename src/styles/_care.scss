@@ -1,0 +1,35 @@
+@use './variables' as *;
+@use './components' as *;
+
+.care {
+  position: relative;
+  min-height: 80vh;
+  background-image:  url('../assets/image/take_dog_walk_768px.PNG');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  &__title  {
+   position: absolute;
+   top: 13%;
+   z-index: 2;
+  }
+
+  &__content {
+    width: 80%;
+    min-height: 70%;
+    position: absolute;
+    top: 50% - 40%;
+    left: 50% - 40%;
+    box-sizing: border-box;
+    padding: 20% $extra-big-g $extra-big-g;
+    background-color: $light-c;
+    text-align: center;
+    letter-spacing: 1.3px;
+
+    &--text {
+      margin: $big-g 0;
+    }
+  }
+}

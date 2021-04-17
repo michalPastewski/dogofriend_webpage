@@ -194,7 +194,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"../assets/icons/font/flaticon.scss":"assets/icons/font/flaticon.scss","./../assets/image/samba_dog_portrait_leaf_background_320px.PNG":[["samba_dog_portrait_leaf_background_320px.a09888fb.PNG","assets/image/samba_dog_portrait_leaf_background_320px.PNG"],"assets/image/samba_dog_portrait_leaf_background_320px.PNG"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../assets/icons/font/flaticon.scss":"assets/icons/font/flaticon.scss","./../assets/image/take_dog_walk_768px.PNG":[["take_dog_walk_768px.0ad642ed.PNG","assets/image/take_dog_walk_768px.PNG"],"assets/image/take_dog_walk_768px.PNG"],"./../assets/image/samba_dog_portrait_leaf_background_320px.PNG":[["samba_dog_portrait_leaf_background_320px.a09888fb.PNG","assets/image/samba_dog_portrait_leaf_background_320px.PNG"],"assets/image/samba_dog_portrait_leaf_background_320px.PNG"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -222,7 +222,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59576" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57114" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
