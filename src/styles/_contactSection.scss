@@ -1,0 +1,46 @@
+@use './variables' as *;
+
+.contact {
+  width: 90%;
+  margin: 0 auto $big-g;
+  border: solid 1px $border-dark-c;
+  border-radius: $radius-size;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  &__title {
+    width: 60%;
+    margin-top: $normal-g;
+    background-color: $basic-c;
+
+    &--text {
+      padding: $small-g $normal-g;
+      font-family: $header-font;
+      font-size: $normal-f;
+      font-weight: 400;
+      letter-spacing: $extra-small-g;
+      color: $base-c;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    padding: $big-g;
+    text-align: center;
+
+    &__item {
+      letter-spacing: 1px;
+      &--text {
+        display: block;
+        padding-top: $small-g;
+      }
+      &--link {
+        display: block;
+        padding: $extra-small-g 0;
+        color: $font-c;
+        font-weight: bolder;
+      }
+    }
+  }
+}

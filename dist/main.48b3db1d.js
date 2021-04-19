@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./flaticon.ttf":[["flaticon.443a7a2d.ttf","assets/icons/font/flaticon.ttf"],"assets/icons/font/flaticon.ttf"],"./flaticon.woff":[["flaticon.47b9881d.woff","assets/icons/font/flaticon.woff"],"assets/icons/font/flaticon.woff"],"./flaticon.woff2":[["flaticon.ea7b0f4f.woff2","assets/icons/font/flaticon.woff2"],"assets/icons/font/flaticon.woff2"],"./flaticon.eot":[["flaticon.b410a2fe.eot","assets/icons/font/flaticon.eot"],"assets/icons/font/flaticon.eot"],"./flaticon.svg":[["flaticon.4fe409f1.svg","assets/icons/font/flaticon.svg"],"assets/icons/font/flaticon.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"styles/main.scss":[function(require,module,exports) {
+},{"./flaticon.woff2":[["flaticon.ea7b0f4f.woff2","assets/icons/font/flaticon.woff2"],"assets/icons/font/flaticon.woff2"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"styles/main.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -222,7 +222,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57114" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61694" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

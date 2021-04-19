@@ -1,8 +1,9 @@
 @use './variables' as *;
 @use './components' as *;
 @use './educationSection';
-@use './care';
-@use './about';
+@use './careSection';
+@use './aboutSection';
+@use './contactSection';
 @import url("../assets/icons/font/flaticon.scss");
 
 //simple normalize
@@ -18,13 +19,14 @@ figure,
 h1,
 h2,
 h3,
-p, div, section, article {
+p, div, section, article, a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background: 0;
   list-style: none;
   outline: 0;
+  text-decoration: none;
 }
 
 i {
@@ -137,6 +139,52 @@ i {
 
 .footer {
   width: 100vw;
-  height: clamp(60px, 20vh, 100px);
+  height: clamp(60px, 20vh, 80px);
   background-image: $footer-gradient;
+
+  &__download {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &--link {
+      width: max(20%, 40px);
+      margin: $small-g;
+      border: solid 1px transparent;
+      border-left-color: $base-c;
+      border-right-color: $base-c;
+      text-align: center;
+      font-size: $small-f;
+      color: $base-c;
+      letter-spacing: 1.5px;
+
+      &:hover {
+        transform: scale(1.1);
+        color: $hover-button-s;
+        border-left-color: $hover-button-s;
+        border-right-color: $hover-button-s;
+      }
+    }
+  }
+
+  &__line {
+    width: 90%;
+    height: 1px;
+    margin: 0 auto;
+    background-color: $base-c;
+    opacity: .5;
+  }
+
+  &__copyright {
+    margin: $extra-small-f 0;
+    font-size: $extra-small-f;
+    color: $base-c;
+    letter-spacing: 1px;
+   text-align: center;
+  }
+}
+
+
+.big__screen {
+  display: none;
 }

@@ -18,24 +18,23 @@
       height: 105px;
       border-radius: 50%;
       float: right;
+      clear: both;
       shape-outside: circle(50%);
-      transform: translate(-50%, -40%);
+      transform: translate(-40%, -40%);
     }
+
     &--img {
       position: absolute;
-      width: clamp(150px, 50%, 300px);
+      width: 130px;
       clip-path: circle(50%);
       filter: grayscale(56%);
       -webkit-filter: grayscale(56%);
       -moz-filter: grayscale(56%);
     }
+
     &__text {
-      // width: 80%;
-      // margin: 0 auto;
-      // padding: $normal-g;
-      // background-image: $box-gradient;
-      // transform: translateY(-30%);
       text-align: center;
+
       &--item {
         padding-top: $normal-g;
         word-spacing: 3px;
