@@ -116,20 +116,20 @@ i {
   margin: $extra-big-g auto;
   
   &__title {
-    width: 50%;
+    width: clamp(170px, 40%, 470px);
     padding: $small-g;
     background-image: $header-gradient;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 
     &--icon {
-      font-size: $normal-f + 10px;
+      font-size: clamp(34px, 6vw, 54px);
       color: $light-c;
     }
     &--text {
       font-family: $header-font;
-      font-size: $normal-f;
+      font-size: clamp(24px, 5vw, 36px);
       font-weight: 400;
       letter-spacing: $extra-small-g;
       color: $base-c;
@@ -187,4 +187,17 @@ i {
 
 .big__screen {
   display: none;
+}
+
+
+@media screen and (min-width: 998px) {
+  .article__title {
+    &--text {
+      letter-spacing: $small-g;
+    }
+  }
+
+  .big__screen {
+    display: block;
+  }
 }

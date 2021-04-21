@@ -51,12 +51,13 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   width: 100%;
   margin-top: 21px;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
+  gap: clamp(8px, 3vw, 24px);
 }
 .education__content__card {
-  width: 80%;
+  width: min(350px, 80%);
   margin: 8px auto;
   padding: 8px;
   border: solid 1px transparent;
@@ -75,13 +76,14 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   min-height: 76px;
   padding: 8px;
   font-family: "Merriweather", serif;
-  font-size: 22px;
+  font-size: 20px;
   letter-spacing: 3px;
 }
 .education__content__card--checkbox {
   display: none;
 }
 .education__content__card--text {
+  padding: 0 8px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -105,6 +107,28 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   content: "schowaj";
 }
 
+@media screen and (min-width: 998px) {
+  .education__content__card {
+    width: min(470px, 80%);
+    margin-top: 34px;
+  }
+  .education__content__card--title {
+    font-size: 34px;
+  }
+  .education__content__card--text {
+    margin-bottom: 8px;
+    -webkit-line-clamp: 3;
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1439px) {
+  .education__content__card {
+    width: min(680px, 50%);
+  }
+  .education__content__card--text {
+    -webkit-line-clamp: 5;
+  }
+}
 .care {
   position: relative;
   min-height: 100vh;
@@ -121,12 +145,11 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 }
 .care__content {
   width: 80%;
-  min-height: 50vh;
   position: absolute;
   top: 10%;
   left: 10%;
   box-sizing: border-box;
-  padding: 20% 34px 34px;
+  padding: 90px 34px 34px;
   background-color: rgba(194, 213, 199, 0.6);
   text-align: center;
   letter-spacing: 1.3px;
@@ -134,7 +157,31 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 .care__content--text {
   margin: 13px 0;
 }
+.care__content--link {
+  padding: 8px;
+  border-radius: 3px;
+  color: #06281f;
+  transition: color 0.1s ease, box-shadow 0.3s ease;
+}
+.care__content--link:hover {
+  color: #fff;
+  box-shadow: 0 0 10px 0px #fff inset;
+  transition: color 0.1s ease, box-shadow 0.3s ease;
+}
 
+@media screen and (min-width: 767px) {
+  .care__content {
+    width: 50%;
+    left: 40%;
+    padding-top: 60px;
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 998px) {
+  .care__content {
+    font-size: 26px;
+  }
+}
 .about {
   position: relative;
   padding-top: 34px;
@@ -190,7 +237,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 .contact__title--text {
   padding: 8px 13px;
   font-family: "Merriweather", serif;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   letter-spacing: 3px;
   color: #fff;
@@ -314,20 +361,20 @@ i {
   margin: 34px auto;
 }
 .article__title {
-  width: 50%;
+  width: clamp(170px, 40%, 470px);
   padding: 8px;
   background-image: linear-gradient(270deg, #2f4858 0.1%, #345561 20.78%, #3c6169 40.01%, #476e70 57.43%, #547b76 77.56%, #64877c 95.59%);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 .article__title--icon {
-  font-size: 32px;
+  font-size: clamp(34px, 6vw, 54px);
   color: rgba(194, 213, 199, 0.6);
 }
 .article__title--text {
   font-family: "Merriweather", serif;
-  font-size: 22px;
+  font-size: clamp(24px, 5vw, 36px);
   font-weight: 400;
   letter-spacing: 3px;
   color: #fff;
@@ -377,6 +424,16 @@ i {
 
 .big__screen {
   display: none;
+}
+
+@media screen and (min-width: 998px) {
+  .article__title--text {
+    letter-spacing: 8px;
+  }
+
+  .big__screen {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=/main.48b3db1d.css.map */

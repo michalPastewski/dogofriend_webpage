@@ -7,13 +7,14 @@
     margin-top: $big-g;
 
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
-    flex-direction: column;
+    gap: clamp(8px, 3vw, 24px);
 
 
     &__card {
-      width: 80%;
+      width: min(350px, 80%);
       margin:  $small-g auto;
       padding: $small-g;
       border: solid 1px transparent;
@@ -43,6 +44,7 @@
       }
 
       &--text {
+        padding: 0 $small-g;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
@@ -50,7 +52,6 @@
       }
 
       &--button {
-        // position: relative;
         @extend %btn;
         min-width: 30%;
         margin: $normal-g $normal-g $extra-small-g 0;
@@ -71,6 +72,36 @@
       &--checkbox:checked ~ &--button::after {
         content: 'schowaj'
       }
+    }
+  }
+}
+
+@media screen and (min-width: 998px) {
+  .education {
+    &__content {
+      &__card {
+        width: min(470px , 80%);
+        margin-top: $extra-big-g;
+
+        &--title {
+          font-size: $large-f;
+        }
+        &--text {
+          margin-bottom: $small-g;
+          -webkit-line-clamp: 3;
+          font-size: $normal-f;
+        }
+      }
+    }
+    }
+}
+
+@media screen and (min-width: 1439px) {
+  .education__content__card {
+    width: min(680px, 50%);
+
+    &--text {
+      -webkit-line-clamp: 5;
     }
   }
 }

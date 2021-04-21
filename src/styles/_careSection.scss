@@ -18,13 +18,12 @@
 
   &__content {
     width: 80%;
-    min-height: 50vh;
     position: absolute;
-    top: 50% - 40%;
-    left: 50% - 40%;
+    top: 10%;
+    left: 10%;
 
     box-sizing: border-box;
-    padding: 20% $extra-big-g $extra-big-g;
+    padding: 90px $extra-big-g $extra-big-g;
     background-color: $light-c;
     text-align: center;
     letter-spacing: 1.3px;
@@ -32,5 +31,33 @@
     &--text {
       margin: $normal-g 0;
     }
+
+    &--link {
+      padding: $small-g;
+      border-radius: $radius-size;
+      color: $font-c;
+      transition: color .1s  ease, box-shadow .3s ease;
+
+      &:hover {
+        color: $base-c;
+        box-shadow: 0 0 10px 0px $base-c inset;
+        transition: color .1s ease, box-shadow .3s ease;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .care__content {
+    width: 50%;
+    left: 40%;
+    padding-top: 60px;
+    font-size: $normal-f;
+  }
+}
+
+@media screen and (min-width: 998px) {
+  .care__content {
+    font-size: $large-f - 8px;
   }
 }
