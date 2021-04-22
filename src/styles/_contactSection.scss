@@ -1,4 +1,12 @@
 @use './variables' as *;
+@use './components'as *;;
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  margin-bottom: clamp(21px, 4vw, 34px)
+}
 
 .contact {
   width: 90%;
@@ -17,7 +25,7 @@
     &--text {
       padding: $small-g $normal-g;
       font-family: $header-font;
-      font-size: $normal-f;
+      font-size: clamp(24px, 4vw, 36px);
       font-weight: 400;
       letter-spacing: $extra-small-g;
       color: $base-c;
@@ -33,14 +41,52 @@
       letter-spacing: 1px;
       &--text {
         display: block;
-        padding-top: $small-g;
       }
       &--link {
-        display: block;
-        padding: $extra-small-g 0;
-        color: $font-c;
+        @extend %text-link;
+        // display: block;
+        padding: $small-g;
+        // color: $font-c;
         font-weight: bolder;
+
+        &:hover {
+          color: $font-c;
+          box-shadow: 0 0 7px 0px $font-c inset;
+        }
       }
     }
   }
+}
+
+@media screen and (min-width: 767px) {
+  .wrapper {
+    height: 240px;
+  }
+  .contact {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    right: 25%;
+    width: 470px;
+
+    &__content {
+      &__item {
+        font-size: $normal-f;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 998px) {
+  .wrapper {
+    height: 260px;
+  }
+  .contact {
+    &__content {
+      &__item {
+        font-size: $large-f - 8px;
+      }
+    }
+  }
+
 }

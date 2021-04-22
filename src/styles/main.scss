@@ -36,6 +36,7 @@ i {
 //======================
 
 .container {
+  position: relative;
   background-color: $base-c;
   font-family: $text-font;
   font-size: $small-f;
@@ -144,26 +145,18 @@ i {
 
   &__download {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 
     &--link {
-      width: max(20%, 40px);
+      @extend %text-link;
+      width: 100px;
       margin: $small-g;
-      border: solid 1px transparent;
-      border-left-color: $base-c;
-      border-right-color: $base-c;
+      padding: $extra-small-g;
       text-align: center;
       font-size: $small-f;
       color: $base-c;
       letter-spacing: 1.5px;
-
-      &:hover {
-        transform: scale(1.1);
-        color: $hover-button-s;
-        border-left-color: $hover-button-s;
-        border-right-color: $hover-button-s;
-      }
     }
   }
 
@@ -177,7 +170,7 @@ i {
 
   &__copyright {
     margin: $extra-small-f 0;
-    font-size: $extra-small-f;
+    font-size: $small-f;
     color: $base-c;
     letter-spacing: 1px;
    text-align: center;
