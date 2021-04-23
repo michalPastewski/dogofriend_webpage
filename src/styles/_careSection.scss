@@ -3,7 +3,7 @@
 
 .care {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   background-image:  url('../assets/image/take_dog_walk_768px.PNG');
   background-repeat: no-repeat;
   background-position: center;
@@ -49,8 +49,18 @@
 }
 
 @media screen and (min-width: 998px) {
-  .care__content {
-    top: 5vh;
-    font-size: $large-f - 8px;
+  .care {
+    background-image:  url('../assets/image/take_dog_walk_1024px.PNG');
+    
+    &__content {
+      top: 5vh;
+      font-size: $large-f - 8px;
+    }
+  }
+}
+
+@media screen and (min-height: 800px) {
+  .care {
+    height: 800px;
   }
 }

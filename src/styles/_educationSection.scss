@@ -57,6 +57,7 @@
         margin: $normal-g $normal-g $extra-small-g 0;
         align-self: flex-end;
         font-size: $small-f;
+        cursor: pointer;
       }
 
       &--checkbox:checked  ~ &--text {

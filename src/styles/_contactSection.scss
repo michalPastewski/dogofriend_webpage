@@ -44,14 +44,12 @@
       }
       &--link {
         @extend %text-link;
-        // display: block;
         padding: $small-g;
-        // color: $font-c;
         font-weight: bolder;
 
         &:hover {
           color: $font-c;
-          box-shadow: 0 0 7px 0px $font-c inset;
+          box-shadow: 0 0 7px 0px $font-c;
         }
       }
     }
@@ -67,7 +65,7 @@
     top: 0;
     left: 25%;
     right: 25%;
-    width: 470px;
+    width: 50%;
 
     &__content {
       &__item {
@@ -88,5 +86,10 @@
       }
     }
   }
+}
 
+@media screen and (min-width: 1439px) {
+  .contact {
+    width: 40%;
+  }
 }

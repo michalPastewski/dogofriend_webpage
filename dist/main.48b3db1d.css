@@ -47,6 +47,28 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   border: solid 2px #3c5166;
 }
 
+.article__title, .hero__banner__header {
+  width: clamp(170px, 40%, 470px);
+  padding: 8px;
+  background-image: linear-gradient(270deg, #2f4858 0.1%, #345561 20.78%, #3c6169 40.01%, #476e70 57.43%, #547b76 77.56%, #64877c 95.59%);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.article__title--icon, .hero__banner__header--icon {
+  font-size: clamp(34px, 6vw, 54px);
+  color: rgba(194, 213, 199, 0.6);
+}
+
+.article__title--text, .hero__banner__header--text {
+  font-family: "Merriweather", serif;
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: #fff;
+}
+
 .footer__download--link, .contact__content__item--link, .about__content__text--link, .care__content--link {
   display: inline-block;
   border-radius: 3px;
@@ -60,6 +82,96 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   transition: color 0.1s ease, box-shadow 0.2s ease;
 }
 
+.hero {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: 0 0 2px 4px rgba(60, 81, 102, 0.25);
+}
+.hero__banner {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  background-image: url("/samba_dog_portrait_leaf_background_765px.f96eb796.PNG");
+  background-size: cover;
+  background-position: top;
+}
+.hero__banner__header {
+  position: absolute;
+  top: 15vh;
+  left: 0;
+  z-index: 2;
+}
+.hero__banner__header--text {
+  font-size: clamp(24px, 6vw, 58px);
+}
+.hero__banner__title {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 42%;
+  padding-bottom: 8px;
+  background-color: #fff;
+  clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%, 0 0);
+  transform: translateY(1px);
+}
+.hero__banner__title__items {
+  position: absolute;
+  left: 0;
+  bottom: 8%;
+}
+.hero__banner__title--text {
+  padding-left: 13px;
+  font-family: "Merriweather", serif;
+  font-size: clamp(34px, 6vw, 100px);
+  letter-spacing: 8px;
+}
+.hero__icons {
+  position: absolute;
+  top: 90vh;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
+  font-size: 34px;
+  z-index: 3;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media screen and (min-width: 767px) {
+  .hero__banner {
+    background-image: url("/samba_dog_portrait_wood_background_1024px.3c87c8fc.PNG");
+  }
+}
+@media screen and (min-width: 998px) {
+  .hero__banner {
+    height: 100vh;
+    background-image: url("/samba_dog_portrait_wood_background_1024px.3c87c8fc.PNG");
+  }
+  .hero__banner__title {
+    height: 100%;
+    clip-path: polygon(0 0, 60% 0, 20% 100%, 0 100%, 0% 38%);
+  }
+  .hero__banner__title__items {
+    height: 20vh;
+    top: 30vh;
+    padding-left: 21px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hero__banner__title--text:last-child {
+    width: 100%;
+  }
+  .hero__icons {
+    position: absolute;
+    top: 55vh;
+    left: 21px;
+    width: clamp(320px, 25vw, 550px);
+    font-size: clamp(24px, 10vw, 70px);
+    justify-content: space-between;
+  }
+}
 .education__content {
   width: 100%;
   margin-top: 21px;
@@ -107,6 +219,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   margin: 13px 13px 3px 0;
   align-self: flex-end;
   font-size: 14px;
+  cursor: pointer;
 }
 .education__content__card--checkbox:checked ~ .education__content__card--text {
   -webkit-line-clamp: initial;
@@ -144,7 +257,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 }
 .care {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   background-image: url("/take_dog_walk_768px.0ad642ed.PNG");
   background-repeat: no-repeat;
   background-position: center;
@@ -183,9 +296,17 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   }
 }
 @media screen and (min-width: 998px) {
+  .care {
+    background-image: url("/take_dog_walk_1024px.6447f2bc.PNG");
+  }
   .care__content {
     top: 5vh;
     font-size: 26px;
+  }
+}
+@media screen and (min-height: 800px) {
+  .care {
+    height: 800px;
   }
 }
 .about {
@@ -319,7 +440,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 }
 .contact__content__item--link:hover {
   color: #06281f;
-  box-shadow: 0 0 7px 0px #06281f inset;
+  box-shadow: 0 0 7px 0px #06281f;
 }
 
 @media screen and (min-width: 767px) {
@@ -332,7 +453,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
     top: 0;
     left: 25%;
     right: 25%;
-    width: 470px;
+    width: 50%;
   }
   .contact__content__item {
     font-size: 20px;
@@ -347,6 +468,11 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
     font-size: 26px;
   }
 }
+@media screen and (min-width: 1439px) {
+  .contact {
+    width: 40%;
+  }
+}
 html,
 body,
 *::after,
@@ -359,7 +485,11 @@ figure,
 h1,
 h2,
 h3,
-p, div, section, article, a {
+p,
+div,
+section,
+article,
+a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -398,47 +528,6 @@ i {
   height: 50px;
 }
 
-.hero {
-  width: 100vw;
-  height: 100vh;
-  box-shadow: 0 0 2px 4px rgba(60, 81, 102, 0.25);
-}
-.hero__banner {
-  position: relative;
-  width: 100vw;
-  height: 90vh;
-  background-image: url("/samba_dog_portrait_leaf_background_320px.a09888fb.PNG");
-  background-size: cover;
-  background-position: top;
-}
-.hero__banner__title {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 42%;
-  padding-bottom: 8px;
-  background-color: #fff;
-  clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%, 0 0);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  transform: translateY(1px);
-}
-.hero__banner__title--text {
-  padding-left: 13px;
-  font-family: "Merriweather", serif;
-  font-size: 34px;
-  letter-spacing: 8px;
-}
-.hero__icons {
-  height: 10vh;
-  font-size: 34px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 .main {
   max-width: 1920px;
   margin: 0 auto;
@@ -447,29 +536,9 @@ i {
 .article {
   margin: 34px auto;
 }
-.article__title {
-  width: clamp(170px, 40%, 470px);
-  padding: 8px;
-  background-image: linear-gradient(270deg, #2f4858 0.1%, #345561 20.78%, #3c6169 40.01%, #476e70 57.43%, #547b76 77.56%, #64877c 95.59%);
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.article__title--icon {
-  font-size: clamp(34px, 6vw, 54px);
-  color: rgba(194, 213, 199, 0.6);
-}
-.article__title--text {
-  font-family: "Merriweather", serif;
-  font-size: clamp(24px, 5vw, 36px);
-  font-weight: 400;
-  letter-spacing: 3px;
-  color: #fff;
-}
-
 .footer {
   width: 100vw;
-  height: clamp(60px, 20vh, 80px);
+  max-height: 100px;
   background-image: linear-gradient(180deg, #64877c 0%, #547b76 35.42%, #476e70 60.42%, #3c6169 100%);
 }
 .footer__download {
@@ -494,8 +563,8 @@ i {
   opacity: 0.5;
 }
 .footer__copyright {
-  margin: 10px 0;
-  font-size: 14px;
+  padding: 8px 0;
+  font-size: 10px;
   color: #fff;
   letter-spacing: 1px;
   text-align: center;
@@ -511,7 +580,14 @@ i {
   }
 
   .big__screen {
-    display: block;
+    display: flex;
+  }
+
+  .footer__download--link {
+    font-size: 20px;
+  }
+  .footer__copyright {
+    font-size: 20px;
   }
 }
 

@@ -1,0 +1,119 @@
+@use './variables' as *;
+@use './components' as *;
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: 0 0 2px 4px $border-light-c;
+
+  &__banner {
+    position: relative;
+    width: 100vw;
+    height: 90vh;
+    background-image: url("../assets/image/samba_dog_portrait_leaf_background_765px.PNG");
+    background-size: cover;
+    background-position: top;
+
+    &__header {
+      @extend %article-title;
+      position: absolute;
+      top: 15vh;
+      left: 0;
+      z-index: 2;
+
+      &--icon {
+        @extend %article-icon;
+      }
+
+      &--text {
+        @extend %article-text;
+        font-size: clamp(24px, 6vw, 58px);
+      }
+    }
+
+    &__title {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 42%;
+      padding-bottom: $small-g;
+      background-color: $base-c;
+      clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%, 0 0);
+      transform: translateY(1px);
+
+      &__items {
+        position: absolute;
+        left: 0;
+        bottom: 8%;
+      }
+      &--text {
+        padding-left: $normal-g;
+        font-family: $header-font;
+        font-size: clamp(34px, 6vw, 100px);
+        letter-spacing: $small-g;
+      }
+    }
+  }
+
+  &__icons {
+    position: absolute;
+    top: 90vh;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    font-size: $large-f;
+    z-index: 3;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .hero__banner {
+    background-image: url("../assets/image/samba_dog_portrait_wood_background_1024px.PNG");
+  }
+}
+
+@media screen and (min-width: 998px) {
+  .hero {
+    &__banner {
+      height: 100vh;
+      background-image: url("../assets/image/samba_dog_portrait_wood_background_1024px.PNG");
+  
+      &__title {
+        height: 100%;
+        clip-path: polygon(0 0, 60% 0, 20% 100%, 0 100%, 0% 38%);      
+  
+        &__items {
+          height: 20vh;
+          top: 30vh;
+          padding-left: $big-g;
+  
+          display: flex;
+          flex-wrap: wrap;
+        }
+  
+        &--text:last-child {
+          width: 100%;
+        }
+      }
+  
+    }
+
+    &__icons {
+      position: absolute;
+      top: 55vh;
+      left: $big-g;
+      width: clamp(320px, 25vw, 550px);
+      font-size: clamp(24px, 10vw, 70px);
+
+      justify-content: space-between;
+    }
+  }
+}
+
+
+
