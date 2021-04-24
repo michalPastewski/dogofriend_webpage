@@ -14,6 +14,29 @@
     <figure class="navigation__logo">
       <img class="navigation__logo--img" src="./assets/logo_dogofriend.svg" alt="dogofriend_logo">
     </figure>
+
+    <section class="navigation__menu">
+      <input type="checkbox" class="navigation__menu--input" id="menu-burger">
+      <ul class="navigation__menu__list">
+        <li class="navigation__menu__list__item">
+          <a href="#education" class="navigation__menu__list__item--link">edukacja</a>
+        </li>
+        <li class="navigation__menu__list__item">
+          <a href="#care" class="navigation__menu__list__item--link">opieka</a>
+        </li>
+        <li class="navigation__menu__list__item">
+          <a href="#about" class="navigation__menu__list__item--link">o nas</a>
+        </li>
+        <li class="navigation__menu__list__item">
+          <a href="#contact" class="navigation__menu__list__item--link">kontakt</a>
+        </li>
+      </ul>
+      <label for="menu-burger" class="navigation__menu__burger">
+        <span class="navigation__menu__burger--item"></span>
+        <span class="navigation__menu__burger--item"></span>
+        <span class="navigation__menu__burger--item"></span>
+      </label>
+    </section>
   </nav>
 
   <header class="hero">
@@ -23,7 +46,7 @@
         <i class="hero__banner__header--icon flaticon-pawprint"></i>
         <h2 class="hero__banner__header--text">dogofriend</h2>
       </div>
-  
+
       <div class="hero__banner__title">
         <div class="hero__banner__title__items">
           <h1 class="hero__banner__title--text">życie</h1>
@@ -35,7 +58,7 @@
             <i class="flaticon-care"></i>
             <i class="flaticon-pawprint"></i>
           </div>
-    
+
         </div>
       </div>
     </section>
@@ -43,7 +66,7 @@
 
   <main class="main">
 
-    <article class="education article">
+    <article class="education article" id="education">
       <header class="article__title">
         <i class="article__title--icon flaticon-mortarboard"></i>
         <h2 class="article__title--text">edukacja</h2>
@@ -109,7 +132,7 @@
       </div>
     </article>
 
-    <article class="care article">
+    <article class="care article" id="care">
       <header class="article__title care__title">
         <i class="article__title--icon flaticon-care"></i>
         <h2 class="article__title--text">opieka</h2>
@@ -131,64 +154,66 @@
           Pragniemy nauczyć ludzi jak "czytać" psy i jak się nimi zająć podczas codziennych spacerów i nie tylko.
         </p>
         <p>
-         <a class="care__content--link" href="mailto:kontakt.dogofriend@gmail.com" >Napisz do nas jeśli chcesz poznać szczegółu.</a>
+          <a class="care__content--link" href="mailto:kontakt.dogofriend@gmail.com">Napisz do nas jeśli chcesz poznać
+            szczegółu.</a>
         </p>
       </section>
     </article>
 
-    <article class="about article">
+    <article class="about article" id="about">
       <header class="article__title about__title">
         <i class="article__title--icon flaticon-dog"></i>
         <h2 class="article__title--text">o nas</h2>
       </header>
 
       <section class="about__content">
-          <figure class="about__content__image">
-            <img class="about__content--img" src="./assets/image/owner_with_his_dog_375px.PNG" alt="owner_with_his_dog">
-          </figure>
-          <p class="about__content__text">
-            Zajęcia prowadzimy na ternie Gdańska i najbliższej okolicy.
-          </p>
-          <p class="about__content__text">
-            Do każdej placówki podchodzimy indywidualnie, dlatego przed podjęciem współpracy obowiązkowo umawiamy się na
-            zajęcia zapoznawcze.
-          </p>
-          <p class="about__content__text">
-            <a class="about__content__text--link" href="mailto:kontakt.dogofriend@gmail.com" >Osoby zainteresowane naszą ofertą zapraszamy do kontaktu!</a>
-          </p>
+        <figure class="about__content__image">
+          <img class="about__content--img" src="./assets/image/owner_with_his_dog_375px.PNG" alt="owner_with_his_dog">
+        </figure>
+        <p class="about__content__text">
+          Zajęcia prowadzimy na ternie Gdańska i najbliższej okolicy.
+        </p>
+        <p class="about__content__text">
+          Do każdej placówki podchodzimy indywidualnie, dlatego przed podjęciem współpracy obowiązkowo umawiamy się na
+          zajęcia zapoznawcze.
+        </p>
+        <p class="about__content__text">
+          <a class="about__content__text--link" href="mailto:kontakt.dogofriend@gmail.com">Osoby zainteresowane naszą
+            ofertą zapraszamy do kontaktu!</a>
+        </p>
       </section>
     </article>
 
     <article class="wrapper">
-      <div class="contact">
-      <header class="contact__title">
-        <h2 class="contact__title--text">kontakt</h2>
-      </header>
+      <section class="contact" id="contact">
+        <header class="contact__title">
+          <h2 class="contact__title--text">kontakt</h2>
+        </header>
 
-      <ul class="contact__content">
-        <li class="contact__content__item">
-          <span class="contact__content__item--text">zadzwoń</span>
-          <a href="tel:+48693074331" class="contact__content__item--link">693-074-331</a>
-        </li>
-        <li class="contact__content__item">
-          <span class="contact__content__item--text">napisz</span>
-          <a href="mailto:kontakt.dogofriend@gmail.com"
-            class="contact__content__item--link">kontakt.dogofriend@gmail.com</a>
-        </li>
-      </ul>
-    </div>
+        <ul class="contact__content">
+          <li class="contact__content__item">
+            <span class="contact__content__item--text">zadzwoń</span>
+            <a href="tel:+48693074331" class="contact__content__item--link">693-074-331</a>
+          </li>
+          <li class="contact__content__item">
+            <span class="contact__content__item--text">napisz</span>
+            <a href="mailto:kontakt.dogofriend@gmail.com"
+              class="contact__content__item--link">kontakt.dogofriend@gmail.com</a>
+          </li>
+        </ul>
+      </section>
     </article>
 
 
   </main>
 
-  <footer class="footer">
+  <footer class="footer" id="footer">
 
     <div class="footer__download">
-      <a class="footer__download--link" href="">
+      <a class="footer__download--link" href="#footer">
         cennik
       </a>
-      <a class="footer__download--link" href='' download="./assets/oferta_dogofriend.pdf">
+      <a class="footer__download--link" href='#footer' download="./assets/oferta_dogofriend.pdf">
         oferta
       </a>
     </div>

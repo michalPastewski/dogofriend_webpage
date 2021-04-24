@@ -1,5 +1,6 @@
 @use './variables' as *;
 @use './components' as *;
+@use './navigation';
 @use './hero';
 @use './educationSection';
 @use './careSection';
@@ -9,7 +10,7 @@
 
 //simple normalize
 html,
-body,
+body, *,
 *::after,
 *::before,
 button,
@@ -32,6 +33,7 @@ a {
   list-style: none;
   outline: 0;
   text-decoration: none;
+  scroll-behavior: smooth;
 }
 
 i {
@@ -49,22 +51,6 @@ i {
   line-height: 1.2;
 }
 
-.navigation {
-  position: fixed;
-  width: 100vw;
-  height: 60px;
-  background-color: $base-c;
-  border-bottom: solid 2px $border-light-c;
-  z-index: 10;
-
-  &__logo {
-    margin-top: $small-g;
-    &--img {
-      width: clamp(42px, 5vw, 80px);
-      height: 50px;
-    }
-  }
-}
 
 .main {
   max-width: 1920px;
@@ -72,7 +58,7 @@ i {
 }
 
 .article {
-  margin: $extra-big-g auto;
+  margin: ($extra-big-g + 60px) auto;
 
   &__title {
     @extend %article-title;
@@ -142,11 +128,11 @@ i {
 
   .footer {
     &__download--link {
-      font-size: $normal-f;
+      font-size: $normal-f -8px;
     }
 
     &__copyright {
-      font-size: $normal-f;
+      font-size: $normal-f - 6px;
     }
   }
 }
