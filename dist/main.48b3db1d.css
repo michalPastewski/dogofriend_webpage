@@ -90,7 +90,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 .hero__banner {
   position: relative;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   background-image: url("/samba_dog_portrait_leaf_background_765px.f96eb796.PNG");
   background-size: cover;
   background-position: top;
@@ -112,28 +112,24 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   height: 42%;
   padding-bottom: 8px;
   background-color: #fff;
-  clip-path: polygon(0 0, 100% 100%, 100% 100%, 0% 100%, 0 0);
-  transform: translateY(1px);
+  clip-path: polygon(0 0, 100% 85%, 100% 100%, 0% 100%, 0 0);
 }
 .hero__banner__title__items {
   position: absolute;
   left: 0;
-  bottom: 8%;
+  bottom: 0;
 }
 .hero__banner__title--text {
+  margin-bottom: 8px;
   padding-left: 13px;
   font-family: "Merriweather", serif;
-  font-size: clamp(34px, 6vw, 100px);
+  font-size: clamp(34px, 6vw, 34px);
   letter-spacing: 8px;
 }
-.hero__icons {
-  position: absolute;
-  top: 90vh;
-  left: 0;
+.hero__banner__title--icons {
   width: 100vw;
   height: 10vh;
   font-size: 34px;
-  z-index: 3;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -160,16 +156,18 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
     display: flex;
     flex-wrap: wrap;
   }
-  .hero__banner__title--text:last-child {
-    width: 100%;
+  .hero__banner__title--text {
+    margin-bottom: 34px;
+    font-size: clamp(34px, 5vw, 100px);
   }
-  .hero__icons {
-    position: absolute;
-    top: 55vh;
-    left: 21px;
-    width: clamp(320px, 25vw, 550px);
-    font-size: clamp(24px, 10vw, 70px);
+  .hero__banner__title--icons {
+    width: 38%;
+    font-size: clamp(34px, 5vw, 100px);
     justify-content: space-between;
+  }
+
+  .last__text {
+    width: 100%;
   }
 }
 .education__content {
