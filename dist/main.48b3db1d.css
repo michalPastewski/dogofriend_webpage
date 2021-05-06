@@ -95,14 +95,14 @@ i {
   color: #fff;
 }
 
-.footer__download--link, .contact__content__item--link, .about__content__text--link, .care__content--link {
+.footer__download--link, .contact__content__item--link, .care__content--link {
   display: inline-block;
   border-radius: 3px;
   box-sizing: border-box;
   color: #06281f;
   transition: color 0.1s ease, box-shadow 0.2s ease;
 }
-.footer__download--link:hover, .contact__content__item--link:hover, .about__content__text--link:hover, .care__content--link:hover {
+.footer__download--link:hover, .contact__content__item--link:hover, .care__content--link:hover {
   color: #fff;
   box-shadow: 0 0 10px 0px #fff inset;
   transition: color 0.1s ease, box-shadow 0.2s ease;
@@ -454,13 +454,6 @@ i {
 .about__content__text {
   padding-top: 13px;
   word-spacing: 3px;
-}
-.about__content__text--link {
-  padding: 8px;
-}
-.about__content__text--link:hover {
-  color: #ffa17a;
-  box-shadow: 0 0 5px 0px #ffa17a inset;
 }
 
 @media screen and (min-width: 767px) {

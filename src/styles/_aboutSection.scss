@@ -37,16 +37,6 @@
       &__text {
         padding-top: $normal-g;
         word-spacing: 3px;
-
-        &--link {
-          @extend %text-link;
-          padding: $small-g;
-
-          &:hover {
-            color: $hover-button-s;
-            box-shadow: 0 0 5px 0px $hover-button-s inset;
-          }
-        }
       }
     }
   }
