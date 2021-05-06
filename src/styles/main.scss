@@ -42,25 +42,45 @@ body {
 
 .footer {
   width: 100vw;
-  max-height: 100px;
   background-image: $footer-gradient;
 
-  &__download {
+  &__info {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
-    &--link {
-      @extend %text-link;
-      width: 100px;
-      margin: $small-g;
-      padding: $extra-small-g;
-      text-align: center;
-      font-size: $small-f;
+    &__download {
+      width: 70vw;
+      font-size: $extra-small-f;
+      
+      &--label{
+        display: inline;
+        color: $base-c;
+      }
+      &--link {
+        @extend %text-link;
+        width: 80px;
+        margin: $small-g 0;
+        padding: $extra-small-g;
+        color: $base-c;
+        text-align: center;
+        letter-spacing: 1.5px;
+      }
+    }
+
+    &--icon {
+      margin-top: $small-g;
+      font-size: $normal-f + 5px;
       color: $base-c;
-      letter-spacing: 1.5px;
+      &:hover {
+        color: $hover-button-s;
+      }
+      &:active {
+        transform: scale(.9);
+      }
     }
   }
+
 
   &__line {
     width: 90%;
@@ -76,6 +96,15 @@ body {
     color: $base-c;
     letter-spacing: 1px;
     text-align: center;
+
+    display: flex;
+    justify-content: space-around;
+    &--link {
+      color: $base-c;
+      &:hover {
+        color: $hover-button-s;
+      }
+    }
   }
 }
 
@@ -94,13 +123,13 @@ body {
     display: flex;
   }
 
-  .footer {
-    &__download--link {
-      font-size: $normal-f -8px;
-    }
+  // .footer {
+  //   &__download--link {
+  //     font-size: $normal-f -8px;
+  //   }
 
-    &__copyright {
-      font-size: $normal-f - 6px;
-    }
-  }
+  //   &__copyright {
+  //     font-size: $normal-f - 6px;
+  //   }
+  // }
 }

@@ -23,7 +23,7 @@
   &__menu {
     position: relative;
     height: 100%;
-    
+
     &__list {
       width: 60vw;
       height: 100vh;
@@ -41,12 +41,16 @@
 
       &__item {
         position: relative;
-        padding: $normal-g;
-        padding-bottom: 0;
         font-size: $normal-f;
         text-align: center;
         border: solid 4px transparent;
-      
+
+        &--link {
+          padding: $normal-g;
+          padding-bottom: 0;
+          color: $font-c;
+        }
+
         &::before {
           content: '';
           position: absolute;
@@ -62,11 +66,6 @@
         &:hover::before {
          opacity: 1;
          transition: opacity .3s ease;
-        }
-
-        &--link {
-          width: 100%;
-          color: $font-c;
         }
       }
     }
@@ -114,14 +113,14 @@
   .navigation {
      &__menu {
        margin-right: $normal-g;
-       
+
        &__list {
          width: 60vw;
           height: inherit;
           margin: 0;
           padding: 0;
           transform: none;
-   
+
           flex-direction: row;
          justify-content: space-evenly;
          align-items: center;
@@ -130,10 +129,10 @@
            width: 120px;
          }
         }
-        
+
         &__burger {
           display: none;
         }
-     } 
+     }
   }
 }
