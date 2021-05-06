@@ -4,33 +4,15 @@
 .hero {
   width: 100vw;
   height: 100vh;
-  margin-bottom: 60px;
   box-shadow: 0 0 2px 4px $border-light-c;
 
   &__banner {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url("../assets/image/samba_dog_portrait_leaf_background_765px.PNG");
+    background-image: url("../assets/image/dog_on_beach_765px.png");
     background-size: cover;
     background-position: top;
-
-    &__header {
-      @extend %article-title;
-      position: absolute;
-      top: 15vh;
-      left: 0;
-      z-index: 2;
-
-      &--icon {
-        @extend %article-icon;
-      }
-
-      &--text {
-        @extend %article-text;
-        font-size: clamp(24px, 6vw, 58px);
-      }
-    }
 
     &__title {
       position: absolute;
@@ -38,7 +20,7 @@
       bottom: 0;
       width: 100%;
       height: 42%;
-      padding-bottom: $small-g;
+      // padding-bottom: $small-g;
       background-color: $base-c;
       clip-path: polygon(0 0, 100% 85%, 100% 100%, 0% 100%, 0 0);
 

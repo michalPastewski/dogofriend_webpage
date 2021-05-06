@@ -27,7 +27,7 @@
     &__list {
       width: 60vw;
       height: 100vh;
-      margin-top: 62px;
+      margin-top: 60px;
       padding-top: 40px;
       background-color: $base-c;
       transform: translateX(60vw);
@@ -41,7 +41,6 @@
 
       &__item {
         position: relative;
-        width: 20vw;
         padding: $normal-g;
         padding-bottom: 0;
         font-size: $normal-f;
@@ -66,6 +65,7 @@
         }
 
         &--link {
+          width: 100%;
           color: $font-c;
         }
       }
@@ -103,6 +103,12 @@
   }
 }
 
+@media screen and (min-width: 424px) {
+  .navigation__menu__list {
+    width: 40vw;
+  }
+}
+
 @media screen and (min-width: 767px) {
   .navigation {
     height: 80px;
@@ -110,6 +116,7 @@
        margin-right: $normal-g;
        
        &__list {
+         width: 60vw;
           height: inherit;
           margin: 0;
           padding: 0;

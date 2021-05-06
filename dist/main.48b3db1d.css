@@ -47,7 +47,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   border: solid 2px #3c5166;
 }
 
-.article__title, .hero__banner__header {
+.article__title {
   width: clamp(170px, 40%, 470px);
   padding: 8px;
   background-image: linear-gradient(270deg, #2f4858 0.1%, #345561 20.78%, #3c6169 40.01%, #476e70 57.43%, #547b76 77.56%, #64877c 95.59%);
@@ -56,12 +56,12 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   align-items: center;
 }
 
-.article__title--icon, .hero__banner__header--icon {
+.article__title--icon {
   font-size: clamp(34px, 6vw, 54px);
   color: rgba(194, 213, 199, 0.6);
 }
 
-.article__title--text, .hero__banner__header--text {
+.article__title--text {
   font-family: "Merriweather", serif;
   font-size: clamp(24px, 5vw, 36px);
   font-weight: 400;
@@ -107,7 +107,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 .navigation__menu__list {
   width: 60vw;
   height: 100vh;
-  margin-top: 62px;
+  margin-top: 60px;
   padding-top: 40px;
   background-color: #fff;
   transform: translateX(60vw);
@@ -120,7 +120,6 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 }
 .navigation__menu__list__item {
   position: relative;
-  width: 20vw;
   padding: 13px;
   padding-bottom: 0;
   font-size: 20px;
@@ -143,6 +142,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   transition: opacity 0.3s ease;
 }
 .navigation__menu__list__item--link {
+  width: 100%;
   color: #06281f;
 }
 .navigation__menu--input {
@@ -172,6 +172,11 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   transition: transform 0.3s ease-in-out;
 }
 
+@media screen and (min-width: 424px) {
+  .navigation__menu__list {
+    width: 40vw;
+  }
+}
 @media screen and (min-width: 767px) {
   .navigation {
     height: 80px;
@@ -180,6 +185,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
     margin-right: 13px;
   }
   .navigation__menu__list {
+    width: 60vw;
     height: inherit;
     margin: 0;
     padding: 0;
@@ -198,25 +204,15 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 .hero {
   width: 100vw;
   height: 100vh;
-  margin-bottom: 60px;
   box-shadow: 0 0 2px 4px rgba(60, 81, 102, 0.25);
 }
 .hero__banner {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url("/samba_dog_portrait_leaf_background_765px.f96eb796.PNG");
+  background-image: url("/dog_on_beach_765px.aff2593d.png");
   background-size: cover;
   background-position: top;
-}
-.hero__banner__header {
-  position: absolute;
-  top: 15vh;
-  left: 0;
-  z-index: 2;
-}
-.hero__banner__header--text {
-  font-size: clamp(24px, 6vw, 58px);
 }
 .hero__banner__title {
   position: absolute;
@@ -224,7 +220,6 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   bottom: 0;
   width: 100%;
   height: 42%;
-  padding-bottom: 8px;
   background-color: #fff;
   clip-path: polygon(0 0, 100% 85%, 100% 100%, 0% 100%, 0 0);
 }
@@ -286,6 +281,9 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   .last__text {
     width: 100%;
   }
+}
+.education {
+  padding-top: 80px;
 }
 .education__content {
   width: 100%;
@@ -416,7 +414,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   }
   .care__content {
     top: 5vh;
-    font-size: 26px;
+    font-size: 20px;
   }
 }
 @media screen and (min-height: 800px) {
@@ -426,7 +424,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 }
 .about {
   position: relative;
-  padding-top: 34px;
+  padding-top: 64px;
 }
 .about__content {
   position: relative;
@@ -469,6 +467,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 @media screen and (min-width: 767px) {
   .about {
     height: 400px;
+    padding-top: 94px;
   }
   .about__title {
     position: relative;
@@ -476,7 +475,7 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   }
   .about__content {
     position: absolute;
-    top: -3%;
+    top: 5%;
     left: 40%;
     width: 50%;
     height: 320px;
@@ -634,7 +633,7 @@ i {
 }
 
 .article {
-  margin: 94px auto;
+  margin: 34px auto;
 }
 .footer {
   width: 100vw;

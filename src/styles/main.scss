@@ -58,7 +58,7 @@ i {
 }
 
 .article {
-  margin: ($extra-big-g + 60px) auto;
+  margin: $extra-big-g auto;
 
   &__title {
     @extend %article-title;

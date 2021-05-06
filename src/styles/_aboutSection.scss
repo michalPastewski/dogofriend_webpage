@@ -3,7 +3,7 @@
 
 .about {
   position: relative;
-  padding-top: $extra-big-g;
+  padding-top: $extra-big-g + 30px;
 
   &__content {
     position: relative;
@@ -55,6 +55,7 @@
 @media screen and (min-width: 767px) {
   .about {
     height: 400px;
+    padding-top: 94px;
     &__title {
       position: relative;
       z-index: 2;
@@ -62,7 +63,7 @@
 
     &__content {
     position: absolute;
-    top: -3%;
+    top: 5%;
     left: 40%;
     width: 50%;
     height: 320px;
