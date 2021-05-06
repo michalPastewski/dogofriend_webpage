@@ -1,3 +1,4 @@
+@use './normalize';
 @use './variables' as *;
 @use './components' as *;
 @use './navigation';
@@ -8,47 +9,15 @@
 @use './contactSection';
 @import url("../assets/icons/font/flaticon.scss");
 
-//simple normalize
-html,
-body, *,
-*::after,
-*::before,
-button,
-ol,
-ul,
-li,
-figure,
-h1,
-h2,
-h3,
-p,
-div,
-section,
-article,
-a {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background: 0;
-  list-style: none;
-  outline: 0;
-  text-decoration: none;
-  scroll-behavior: smooth;
+body {
+  font-family: $text-font;
+  font-size: $small-f;
+  color: $font-c;
 }
-
-i {
-  line-height: 0;
-}
-
-//======================
 
 .container {
   position: relative;
   background-color: $base-c;
-  font-family: $text-font;
-  font-size: $small-f;
-  color: $font-c;
-  line-height: 1.2;
 }
 
 
