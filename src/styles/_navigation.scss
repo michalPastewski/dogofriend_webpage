@@ -74,6 +74,7 @@
     &--input {
       display: none;
     }
+
     &__burger {
       position: absolute;
       top: 10px;
@@ -111,7 +112,6 @@
 
 @media screen and (min-width: 767px) {
   .navigation {
-    height: 80px;
      &__menu {
        margin-right: $normal-g;
        
