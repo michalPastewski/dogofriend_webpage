@@ -88,7 +88,7 @@ i {
 
 .article__title--icon {
   font-size: clamp(34px, 6vw, 54px);
-  color: rgba(194, 213, 199, 0.6);
+  color: rgba(194, 213, 199, 0.4);
 }
 
 .article__title--text {
@@ -162,7 +162,7 @@ i {
 .navigation__menu__list__item::before {
   content: "";
   position: absolute;
-  top: 100%;
+  top: 120%;
   left: 0;
   width: 100%;
   height: 3px;
@@ -328,15 +328,17 @@ i {
   border: solid 1px transparent;
   border-radius: 3px;
   text-align: center;
-  box-shadow: 0px 0px 4px 0px #467B9B;
-  transition: border 0.3s ease;
+  box-shadow: 0px 0px 4px 0px transparent;
+  background-color: rgba(194, 213, 199, 0.4);
+  transition: background 0.3s ease, box-shadow 0.4s ease;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 .education__content__card:hover {
-  border: solid 1px #3c5166;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 0px #467B9B;
+  transition: background 0.3s ease, box-shadow 0.4s ease;
 }
 .education__content__card--title {
   padding: 8px;
@@ -391,7 +393,7 @@ i {
   left: 10%;
   box-sizing: border-box;
   padding: 90px 34px 34px;
-  background-color: rgba(194, 213, 199, 0.6);
+  background-color: rgba(194, 213, 199, 0.4);
   text-align: center;
   letter-spacing: 1.3px;
 }

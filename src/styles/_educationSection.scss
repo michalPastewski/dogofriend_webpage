@@ -23,16 +23,19 @@
       border: solid 1px transparent;
       border-radius: $radius-size;
       text-align: center;
-      box-shadow: $box-shadow;
-      transition: border .3s ease;
+      box-shadow: 0px 0px 4px 0px transparent;
+      background-color: $light-c;
+      transition: background .3s ease, box-shadow .4s ease;
       
       display: flex;
       justify-content: center;
       flex-direction: column;
       
       &:hover {
-        border: solid 1px $border-dark-c;
-        transition: border .3s ease, box-shadow .3s ease;
+        background-color: $base-c;
+        box-shadow: $box-shadow;
+
+        transition: background .3s ease, box-shadow .4s ease;
       }
 
       &--title {
