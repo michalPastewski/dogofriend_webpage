@@ -155,14 +155,16 @@ i {
   border: solid 4px transparent;
 }
 .navigation__menu__list__item--link {
-  padding: 13px;
-  padding-bottom: 0;
+  width: 60vw;
+  padding: 8px 13px;
   color: #06281f;
+  border-radius: 3px;
+  transition: background 0.8s ease;
 }
-.navigation__menu__list__item::before {
+.navigation__menu__list__item--link::before {
   content: "";
   position: absolute;
-  top: 120%;
+  top: 125%;
   left: 0;
   width: 100%;
   height: 3px;
@@ -170,7 +172,7 @@ i {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-.navigation__menu__list__item:hover::before {
+.navigation__menu__list__item--link:hover::before {
   opacity: 1;
   transition: opacity 0.3s ease;
 }
@@ -201,6 +203,11 @@ i {
   transition: transform 0.3s ease-in-out;
 }
 
+.navigation--tabs {
+  background-color: #ffa17a;
+  transition: background 0.8s ease;
+}
+
 @media screen and (min-width: 424px) {
   .navigation__menu__list {
     width: 40vw;
@@ -221,7 +228,7 @@ i {
     align-items: center;
   }
   .navigation__menu__list__item {
-    width: 120px;
+    margin: 0;
   }
   .navigation__menu__burger {
     display: none;
@@ -387,7 +394,7 @@ i {
   z-index: 2;
 }
 .care__content {
-  width: 80%;
+  width: 85%;
   position: absolute;
   top: 10%;
   left: 10%;
@@ -429,11 +436,12 @@ i {
 .about {
   position: relative;
   padding-top: 64px;
+  padding-bottom: 34px;
 }
 .about__content {
   position: relative;
   width: 80%;
-  margin: 34px auto 0;
+  margin: 34px auto 34px;
   padding: 13px;
   background-image: linear-gradient(180deg, rgba(69, 129, 145, 0.3) 1.04%, rgba(82, 133, 133, 0.2) 42.19%, rgba(100, 135, 124, 0) 95.31%);
   text-align: center;

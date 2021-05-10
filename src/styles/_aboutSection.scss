@@ -4,11 +4,12 @@
 .about {
   position: relative;
   padding-top: $extra-big-g + 30px;
+  padding-bottom: $extra-big-g;
 
   &__content {
     position: relative;
     width: 80%;
-    margin: $extra-big-g auto 0;
+    margin: $extra-big-g auto $extra-big-g;
     padding: $normal-g;
     background-image: $box-gradient;
     text-align: center;
