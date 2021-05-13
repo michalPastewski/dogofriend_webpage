@@ -174,6 +174,18 @@ exports.navTabs = navTabs;
 
 var _navigation = require("./navigation");
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function debounce(func) {
   var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
   var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
@@ -208,54 +220,34 @@ var scrollDisplayCard = function scrollDisplayCard(scrollPositionY) {
   });
 };
 
+var articles = document.querySelectorAll('.article');
+
+var articlesArr = _toConsumableArray(articles);
+
+var articleTitles = document.querySelectorAll('.article__title');
+
+var slideArticleTitles = function slideArticleTitles(scrollPositionY) {
+  articles.forEach(function (article) {
+    var slideInAt = scrollPositionY + window.innerHeight - article.clientHeight / 2;
+    var articleBottom = article.offsetTop + article.clientHeight;
+    var isNotScrollPast = scrollPositionY < articleBottom;
+
+    if (scrollPositionY > article.offsetTop - article.clientHeight / 1.2) {
+      article['childNodes'][1].classList.add('active--slide');
+    } else {
+      article['childNodes'][1].classList.remove('active--slide');
+    }
+  });
+};
+
 var pageScroll = function pageScroll() {
   var windowScroll = window.scrollY;
   (0, _navigation.navTabs)(windowScroll);
   scrollDisplayCard(windowScroll);
+  slideArticleTitles(windowScroll);
 };
 
 window.addEventListener('scroll', debounce(pageScroll));
-/*
-const articles = document.querySelectorAll('.article');
-const articlesArr = [...articles];
-const articleTitles = document.querySelectorAll('.article__title');
-
-
-const slideArticleTitles = (scrollPositionY) => {
-  // if(scrollPositionY > 900) {
-  //   articleTitles.forEach(title => title.classList.add('active--slide'))
-  // }
-
-  // const bottomOfView = scrollPositionY + window.innerHeight;
-  // const linksNameLastIndex = `${linksName.length - 1}`;
-
-  const articleMatch = articlesArr.filter(article => {
-    const articleTop = article.offsetTop - article.offsetHeight/2;
-    const articleBottom = article.offsetTop + article.offsetHeight/2;
-    return scrollPositionY >= articleTop && scrollPositionY <= articleBottom;
-  });
-
-
-    articles.forEach(title => {
-      if(articleMatch.length && articleMatch[0].id === title.name) {
-        return title.classList.add('navigation--tabs');
-      } else {
-        return title.classList.remove('navigation--tabs')
-      }
-    });
-  }
-
-  // articles.forEach((article, index) => {
-  //   console.log(articles[index].clientHeight)
-  //   const slideInAt = (scrollPositionY + window.innerHeight - article.clientHeight / 2);
-  //   if(scrollPositionY > slideInAt) {
-  //     articleTitles[index].classList.add('active--slide');
-  //   } else {
-  //     articleTitles[index].classList.remove('active--slide');
-  //   }
-  // })
-// }
-*/
 },{"./navigation":"scripts/navigation.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

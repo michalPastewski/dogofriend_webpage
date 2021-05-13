@@ -30,54 +30,32 @@ const scrollDisplayCard = (scrollPositionY) => {
   })
 }
 
-const pageScroll = () => {
-  const windowScroll = window.scrollY;
-  navTabs(windowScroll);
-  scrollDisplayCard(windowScroll);
-}
 
-window.addEventListener('scroll', debounce(pageScroll));
-
-
-/*
 const articles = document.querySelectorAll('.article');
 const articlesArr = [...articles];
 const articleTitles = document.querySelectorAll('.article__title');
 
-
 const slideArticleTitles = (scrollPositionY) => {
-  // if(scrollPositionY > 900) {
-  //   articleTitles.forEach(title => title.classList.add('active--slide'))
-  // }
+  articles.forEach(article => {
+  const slideInAt = scrollPositionY + window.innerHeight - article.clientHeight / 2;
+  const articleBottom = article.offsetTop + article.clientHeight;
+  const isNotScrollPast = scrollPositionY < articleBottom;
 
-  // const bottomOfView = scrollPositionY + window.innerHeight;
-  // const linksNameLastIndex = `${linksName.length - 1}`;
-
-  const articleMatch = articlesArr.filter(article => {
-    const articleTop = article.offsetTop - article.offsetHeight/2;
-    const articleBottom = article.offsetTop + article.offsetHeight/2;
-    return scrollPositionY >= articleTop && scrollPositionY <= articleBottom;
-  });
-
-
-    articles.forEach(title => {
-      if(articleMatch.length && articleMatch[0].id === title.name) {
-        return title.classList.add('navigation--tabs');
-      } else {
-        return title.classList.remove('navigation--tabs')
-      }
-    });
+  if(scrollPositionY > article.offsetTop - article.clientHeight/1.2) {
+    article['childNodes'][1].classList.add('active--slide')
+  } else {
+    article['childNodes'][1].classList.remove('active--slide')
   }
+})
+}
 
-  // articles.forEach((article, index) => {
-  //   console.log(articles[index].clientHeight)
-  //   const slideInAt = (scrollPositionY + window.innerHeight - article.clientHeight / 2);
-  //   if(scrollPositionY > slideInAt) {
-  //     articleTitles[index].classList.add('active--slide');
-  //   } else {
-  //     articleTitles[index].classList.remove('active--slide');
-  //   }
-  // })
-// }
-*/
+const pageScroll = () => {
+  const windowScroll = window.scrollY;
+  navTabs(windowScroll);
+  scrollDisplayCard(windowScroll);
+  slideArticleTitles(windowScroll);
+}
+
+window.addEventListener('scroll', debounce(pageScroll));
+
 

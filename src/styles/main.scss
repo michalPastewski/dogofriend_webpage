@@ -30,7 +30,9 @@ body {
 
   &__title {
     @extend %article-title;
-    // transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: .4;
+    transition: transform .4s ease, opacity .4s ease;
 
     &--icon {
       @extend %article-icon;
@@ -41,9 +43,11 @@ body {
   }
 }
 
-// .active--slide {
-//   transform: translateX(0);
-// }
+.active--slide {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform .6s ease, opacity .6s ease;
+}
 
 .footer {
   width: 100vw;

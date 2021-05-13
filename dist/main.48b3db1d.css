@@ -619,6 +619,17 @@ body {
 .article {
   margin: 34px auto;
 }
+.article__title {
+  transform: translateX(-100%);
+  opacity: 0.4;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.active--slide {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
 .footer {
   width: 100vw;
   background-image: linear-gradient(180deg, #64877c 0%, #547b76 35.42%, #476e70 60.42%, #3c6169 100%);
