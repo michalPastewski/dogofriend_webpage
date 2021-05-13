@@ -141,20 +141,24 @@ function navTabs() {
   var articleMatch = articlesArr.filter(function (article) {
     var articleTop = article.offsetTop - article.offsetHeight / 2;
     var articleBottom = article.offsetTop + article.offsetHeight / 2;
+    return scrollPositionY >= articleTop && scrollPositionY <= articleBottom;
+  });
+  var lastIndex = "".concat(linksName.length - 1);
 
-    if (scrollPositionY >= articleTop && scrollPositionY <= articleBottom) {
-      return true;
-    }
-  });
-  linksName.forEach(function (link) {
-    if (scrollPositionY + window.innerHeight > body.offsetHeight - 50 && link.name === 'contact') {
-      return link.classList.add('navigation--tabs');
-    } else if (articleMatch.length && articleMatch[0].id === link.name) {
-      return link.classList.add('navigation--tabs');
-    } else {
+  if (scrollPositionY + window.innerHeight > body.offsetHeight - 50) {
+    linksName.forEach(function (link) {
       return link.classList.remove('navigation--tabs');
-    }
-  });
+    });
+    linksName[lastIndex].classList.add('navigation--tabs');
+  } else {
+    linksName.forEach(function (link) {
+      if (articleMatch.length && articleMatch[0].id === link.name) {
+        return link.classList.add('navigation--tabs');
+      } else {
+        return link.classList.remove('navigation--tabs');
+      }
+    });
+  }
 }
 
 var pageScroll = function pageScroll() {
@@ -190,7 +194,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60515" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51505" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

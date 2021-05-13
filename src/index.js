@@ -10,21 +10,23 @@ function navTabs() {
   const articleMatch = articlesArr.filter(article => {
     const articleTop = article.offsetTop - article.offsetHeight/2;
     const articleBottom = article.offsetTop + article.offsetHeight/2;
-
-    if(scrollPositionY >= articleTop && scrollPositionY <= articleBottom) {
-        return true;
-    }
+    return scrollPositionY >= articleTop && scrollPositionY <= articleBottom;
   });
 
-  linksName.forEach(link => {
-    if(scrollPositionY + window.innerHeight > body.offsetHeight - 50 && link.name === 'contact') {
-      return link.classList.add('navigation--tabs');
-    } else if(articleMatch.length && articleMatch[0].id === link.name) {
-      return link.classList.add('navigation--tabs');
-    } else {
-      return link.classList.remove('navigation--tabs');
-    }
-  });
+  const lastIndex = `${linksName.length - 1}`;
+  if(scrollPositionY + window.innerHeight > body.offsetHeight - 50 ){
+    linksName.forEach(link => link.classList.remove('navigation--tabs'));
+    linksName[lastIndex].classList.add('navigation--tabs');
+  } else {
+    linksName.forEach(link => {
+      if(articleMatch.length && articleMatch[0].id === link.name) {
+        return link.classList.add('navigation--tabs');
+      } else {
+        return link.classList.remove('navigation--tabs');
+      }
+    });
+  }
+
 }
 
 const pageScroll = () => {
