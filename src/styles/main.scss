@@ -30,6 +30,7 @@ body {
 
   &__title {
     @extend %article-title;
+    // transform: translateX(-100%);
 
     &--icon {
       @extend %article-icon;
@@ -39,6 +40,10 @@ body {
     }
   }
 }
+
+// .active--slide {
+//   transform: translateX(0);
+// }
 
 .footer {
   width: 100vw;

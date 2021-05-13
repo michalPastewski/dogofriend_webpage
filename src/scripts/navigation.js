@@ -1,22 +1,21 @@
 const body = document.querySelector('body');
 const articles = document.querySelectorAll('.article');
 const linksName = body.querySelectorAll('[name]');
-
 const articlesArr = [...articles];
 
+export const navTabs = (scrollPositionY) => {
+  const bottomOfView = scrollPositionY + window.innerHeight;
+  const linksNameLastIndex = `${linksName.length - 1}`;
 
-function navTabs() {
-  const scrollPositionY = window.pageYOffset;
   const articleMatch = articlesArr.filter(article => {
     const articleTop = article.offsetTop - article.offsetHeight/2;
     const articleBottom = article.offsetTop + article.offsetHeight/2;
     return scrollPositionY >= articleTop && scrollPositionY <= articleBottom;
   });
 
-  const lastIndex = `${linksName.length - 1}`;
-  if(scrollPositionY + window.innerHeight > body.offsetHeight - 50 ){
+  if(bottomOfView > body.offsetHeight - 50){
     linksName.forEach(link => link.classList.remove('navigation--tabs'));
-    linksName[lastIndex].classList.add('navigation--tabs');
+    linksName[linksNameLastIndex].classList.add('navigation--tabs');
   } else {
     linksName.forEach(link => {
       if(articleMatch.length && articleMatch[0].id === link.name) {
@@ -26,12 +25,5 @@ function navTabs() {
       }
     });
   }
-
 }
-
-const pageScroll = () => {
-  navTabs();
-}
-
-window.addEventListener('scroll', pageScroll);
 
