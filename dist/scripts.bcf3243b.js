@@ -169,22 +169,50 @@ var navTabs = function navTabs(scrollPositionY) {
 };
 
 exports.navTabs = navTabs;
+},{}],"scripts/contentAnimation.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.slideArticleTitles = exports.scrollDisplayCard = void 0;
+var cards = document.querySelectorAll(".education__content__card");
+var articles = document.querySelectorAll(".article");
+
+var scrollDisplayCard = function scrollDisplayCard(scrollPositionY) {
+  cards.forEach(function (card) {
+    var displayInAt = scrollPositionY + window.innerHeight - card.clientHeight;
+
+    if (displayInAt > card.offsetTop) {
+      card.classList.add("active");
+    } else {
+      card.classList.remove("active");
+    }
+  });
+};
+
+exports.scrollDisplayCard = scrollDisplayCard;
+
+var slideArticleTitles = function slideArticleTitles(scrollPositionY) {
+  articles.forEach(function (article) {
+    var slideInAt = article.offsetTop - article.clientHeight / 1.2;
+    var articleBottom = article.offsetTop + article.clientHeight;
+
+    if (scrollPositionY > slideInAt) {
+      article["childNodes"][1].classList.add("active--slide");
+    } else {
+      article["childNodes"][1].classList.remove("active--slide");
+    }
+  });
+};
+
+exports.slideArticleTitles = slideArticleTitles;
 },{}],"scripts/index.js":[function(require,module,exports) {
 "use strict";
 
 var _navigation = require("./navigation");
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+var _contentAnimation = require("./contentAnimation");
 
 function debounce(func) {
   var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
@@ -206,49 +234,15 @@ function debounce(func) {
   };
 }
 
-var cards = document.querySelectorAll('.education__content__card');
-
-var scrollDisplayCard = function scrollDisplayCard(scrollPositionY) {
-  cards.forEach(function (card) {
-    var displayInAt = scrollPositionY + window.innerHeight - card.clientHeight;
-
-    if (displayInAt > card.offsetTop) {
-      card.classList.add('active');
-    } else {
-      card.classList.remove('active');
-    }
-  });
-};
-
-var articles = document.querySelectorAll('.article');
-
-var articlesArr = _toConsumableArray(articles);
-
-var articleTitles = document.querySelectorAll('.article__title');
-
-var slideArticleTitles = function slideArticleTitles(scrollPositionY) {
-  articles.forEach(function (article) {
-    var slideInAt = scrollPositionY + window.innerHeight - article.clientHeight / 2;
-    var articleBottom = article.offsetTop + article.clientHeight;
-    var isNotScrollPast = scrollPositionY < articleBottom;
-
-    if (scrollPositionY > article.offsetTop - article.clientHeight / 1.2) {
-      article['childNodes'][1].classList.add('active--slide');
-    } else {
-      article['childNodes'][1].classList.remove('active--slide');
-    }
-  });
-};
-
 var pageScroll = function pageScroll() {
   var windowScroll = window.scrollY;
   (0, _navigation.navTabs)(windowScroll);
-  scrollDisplayCard(windowScroll);
-  slideArticleTitles(windowScroll);
+  (0, _contentAnimation.scrollDisplayCard)(windowScroll);
+  (0, _contentAnimation.slideArticleTitles)(windowScroll);
 };
 
 window.addEventListener('scroll', debounce(pageScroll));
-},{"./navigation":"scripts/navigation.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./navigation":"scripts/navigation.js","./contentAnimation":"scripts/contentAnimation.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
