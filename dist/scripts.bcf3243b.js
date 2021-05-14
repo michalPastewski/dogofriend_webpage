@@ -142,7 +142,7 @@ var articles = document.querySelectorAll('.article');
 var linksName = body.querySelectorAll('[name]');
 var burger = document.querySelector('.navigation__menu__burger');
 var burgerItems = document.querySelectorAll('.navigation__menu__burger--item');
-var burgerCheckbox = document.querySelector('.navigation__menu--input'); // navigation burger animated
+var burgerCheckbox = document.querySelector('.navigation__menu--input'); // navigation burger animation
 
 var openBurger = function openBurger() {
   if (!burgerCheckbox.checked) {
@@ -160,9 +160,14 @@ var clickLink = function clickLink() {
 };
 
 burger.addEventListener('click', openBurger);
-linksName.forEach(function (link) {
-  return link.addEventListener('click', clickLink);
-}); // navigation tabs
+
+if (window.innerWidth > 767) {
+  linksName.forEach(function (link) {
+    return link.addEventListener('click', clickLink);
+  });
+  burgerCheckbox.checked = false;
+} // navigation tabs
+
 
 var articlesArr = _toConsumableArray(articles);
 

@@ -5,7 +5,7 @@ const burger = document.querySelector('.navigation__menu__burger');
 const burgerItems = document.querySelectorAll('.navigation__menu__burger--item');
 const burgerCheckbox = document.querySelector('.navigation__menu--input');
 
-// navigation burger animated
+// navigation burger animation
 const openBurger = () => {
   if(!burgerCheckbox.checked) {
     burgerItems[0].classList.add('burger__open__item--one');
@@ -22,8 +22,11 @@ const clickLink = () => {
 }
 
 burger.addEventListener('click', openBurger);
-linksName.forEach(link => link.addEventListener('click', clickLink));
 
+if(window.innerWidth > 767) {
+  linksName.forEach(link => link.addEventListener('click', clickLink));
+  burgerCheckbox.checked = false;
+}
 
 // navigation tabs
 const articlesArr = [...articles];
