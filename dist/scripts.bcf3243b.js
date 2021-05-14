@@ -145,29 +145,30 @@ var burgerItems = document.querySelectorAll('.navigation__menu__burger--item');
 var burgerCheckbox = document.querySelector('.navigation__menu--input'); // navigation burger animation
 
 var openBurger = function openBurger() {
-  if (!burgerCheckbox.checked) {
-    burgerItems[0].classList.add('burger__open__item--one');
-    burgerItems[2].classList.add('burger__open__item--two');
-  } else {
-    burgerItems[0].classList.remove('burger__open__item--one');
-    burgerItems[2].classList.remove('burger__open__item--two');
+  console.log(burgerCheckbox.checked);
+
+  if (window.innerWidth < 768) {
+    if (burgerCheckbox.checked) {
+      burgerItems[0].classList.remove('burger__open__item--one');
+      burgerItems[2].classList.remove('burger__open__item--two');
+    } else {
+      burgerItems[0].classList.add('burger__open__item--one');
+      burgerItems[2].classList.add('burger__open__item--two');
+    }
   }
 };
 
 var clickLink = function clickLink() {
-  openBurger();
-  burgerCheckbox.checked = false;
+  if (window.innerWidth < 768) {
+    openBurger();
+    burgerCheckbox.checked = false;
+  }
 };
 
 burger.addEventListener('click', openBurger);
-
-if (window.innerWidth > 767) {
-  linksName.forEach(function (link) {
-    return link.addEventListener('click', clickLink);
-  });
-  burgerCheckbox.checked = false;
-} // navigation tabs
-
+linksName.forEach(function (link) {
+  return link.addEventListener('click', clickLink);
+}); // navigation tabs
 
 var articlesArr = _toConsumableArray(articles);
 
@@ -298,7 +299,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58566" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52071" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -7,26 +7,27 @@ const burgerCheckbox = document.querySelector('.navigation__menu--input');
 
 // navigation burger animation
 const openBurger = () => {
-  if(!burgerCheckbox.checked) {
-    burgerItems[0].classList.add('burger__open__item--one');
-    burgerItems[2].classList.add('burger__open__item--two');
-  } else {
-    burgerItems[0].classList.remove('burger__open__item--one');
-    burgerItems[2].classList.remove('burger__open__item--two');
+  console.log(burgerCheckbox.checked);
+  if(window.innerWidth < 768) {
+    if(burgerCheckbox.checked) {
+      burgerItems[0].classList.remove('burger__open__item--one');
+      burgerItems[2].classList.remove('burger__open__item--two');
+    } else {
+      burgerItems[0].classList.add('burger__open__item--one');
+      burgerItems[2].classList.add('burger__open__item--two');
+    }
   }
 }
 
 const clickLink = () => {
-  openBurger();
-  burgerCheckbox.checked = false;
+  if(window.innerWidth < 768) {
+    openBurger();
+    burgerCheckbox.checked = false;
+  } 
 }
 
 burger.addEventListener('click', openBurger);
-
-if(window.innerWidth > 767) {
-  linksName.forEach(link => link.addEventListener('click', clickLink));
-  burgerCheckbox.checked = false;
-}
+linksName.forEach(link => link.addEventListener('click', clickLink));
 
 // navigation tabs
 const articlesArr = [...articles];
