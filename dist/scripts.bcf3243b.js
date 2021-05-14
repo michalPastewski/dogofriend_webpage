@@ -140,6 +140,29 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 var body = document.querySelector('body');
 var articles = document.querySelectorAll('.article');
 var linksName = body.querySelectorAll('[name]');
+var burger = document.querySelector('.navigation__menu__burger');
+var burgerItems = document.querySelectorAll('.navigation__menu__burger--item');
+var burgerCheckbox = document.querySelector('.navigation__menu--input'); // navigation burger animated
+
+var openBurger = function openBurger() {
+  if (!burgerCheckbox.checked) {
+    burgerItems[0].classList.add('burger__open__item--one');
+    burgerItems[2].classList.add('burger__open__item--two');
+  } else {
+    burgerItems[0].classList.remove('burger__open__item--one');
+    burgerItems[2].classList.remove('burger__open__item--two');
+  }
+};
+
+var clickLink = function clickLink() {
+  openBurger();
+  burgerCheckbox.checked = false;
+};
+
+burger.addEventListener('click', openBurger);
+linksName.forEach(function (link) {
+  return link.addEventListener('click', clickLink);
+}); // navigation tabs
 
 var articlesArr = _toConsumableArray(articles);
 
@@ -270,7 +293,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57341" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58566" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

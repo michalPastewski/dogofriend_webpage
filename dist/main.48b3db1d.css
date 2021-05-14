@@ -195,12 +195,24 @@ i {
   width: 90%;
   height: 3px;
   background-color: #64877c;
+  transform: rotate(0) scale(1) translate(0px, 0px);
+  transition: transform 0.3s ease;
 }
 .navigation__menu--input:checked ~ .navigation__menu__list {
   display: flex;
   opacity: 1;
   transform: translateX(0);
   transition: transform 0.3s ease-in-out;
+}
+
+.burger__open__item--one {
+  transform: rotate(400deg) scale(0.7) translate(10px, -5px);
+  transition: transform 0.3s ease;
+}
+
+.burger__open__item--two {
+  transform: rotate(-400deg) scale(0.7) translate(10px, 5px);
+  transition: transform 0.3s ease;
 }
 
 .navigation--tabs {

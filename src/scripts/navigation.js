@@ -1,6 +1,31 @@
 const body = document.querySelector('body');
 const articles = document.querySelectorAll('.article');
 const linksName = body.querySelectorAll('[name]');
+const burger = document.querySelector('.navigation__menu__burger');
+const burgerItems = document.querySelectorAll('.navigation__menu__burger--item');
+const burgerCheckbox = document.querySelector('.navigation__menu--input');
+
+// navigation burger animated
+const openBurger = () => {
+  if(!burgerCheckbox.checked) {
+    burgerItems[0].classList.add('burger__open__item--one');
+    burgerItems[2].classList.add('burger__open__item--two');
+  } else {
+    burgerItems[0].classList.remove('burger__open__item--one');
+    burgerItems[2].classList.remove('burger__open__item--two');
+  }
+}
+
+const clickLink = () => {
+  openBurger();
+  burgerCheckbox.checked = false;
+}
+
+burger.addEventListener('click', openBurger);
+linksName.forEach(link => link.addEventListener('click', clickLink));
+
+
+// navigation tabs
 const articlesArr = [...articles];
 
 export const navTabs = (scrollPositionY) => {
