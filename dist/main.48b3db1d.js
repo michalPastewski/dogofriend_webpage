@@ -194,7 +194,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"../assets/icons/font/flaticon.scss":"assets/icons/font/flaticon.scss","./../assets/image/dog_on_beach_765px.png":[["dog_on_beach_765px.aff2593d.png","assets/image/dog_on_beach_765px.png"],"assets/image/dog_on_beach_765px.png"],"./../assets/image/samba_dog_portrait_wood_background_1024px.PNG":[["samba_dog_portrait_wood_background_1024px.3c87c8fc.PNG","assets/image/samba_dog_portrait_wood_background_1024px.PNG"],"assets/image/samba_dog_portrait_wood_background_1024px.PNG"],"./../assets/image/take_dog_walk_768px.PNG":[["take_dog_walk_768px.0ad642ed.PNG","assets/image/take_dog_walk_768px.PNG"],"assets/image/take_dog_walk_768px.PNG"],"./../assets/image/take_dog_walk_1024px.PNG":[["take_dog_walk_1024px.6447f2bc.PNG","assets/image/take_dog_walk_1024px.PNG"],"assets/image/take_dog_walk_1024px.PNG"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../assets/icons/font/flaticon.scss":"assets/icons/font/flaticon.scss","./../assets/image/samba_dog_portrait_wood_background_1024px.PNG":[["samba_dog_portrait_wood_background_1024px.3c87c8fc.PNG","assets/image/samba_dog_portrait_wood_background_1024px.PNG"],"assets/image/samba_dog_portrait_wood_background_1024px.PNG"],"./../assets/image/take_dog_walk_768px.PNG":[["take_dog_walk_768px.0ad642ed.PNG","assets/image/take_dog_walk_768px.PNG"],"assets/image/take_dog_walk_768px.PNG"],"./../assets/image/take_dog_walk_1024px.PNG":[["take_dog_walk_1024px.6447f2bc.PNG","assets/image/take_dog_walk_1024px.PNG"],"assets/image/take_dog_walk_1024px.PNG"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -222,7 +222,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52071" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49240" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

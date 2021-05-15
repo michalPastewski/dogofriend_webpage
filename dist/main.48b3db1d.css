@@ -255,9 +255,13 @@ i {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url("/dog_on_beach_765px.aff2593d.png");
   background-size: cover;
   background-position: top;
+}
+.hero__banner__picture--img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .hero__banner__title {
   position: absolute;
@@ -276,7 +280,7 @@ i {
 .hero__banner__title--text {
   margin-bottom: 8px;
   padding-left: 13px;
-  font-family: "Merriweather", serif;
+  font-family: "Merriweather", serif, "Times New Roman", Times, serif;
   font-size: clamp(28px, 8vw, 34px);
   letter-spacing: 8px;
 }
@@ -613,7 +617,7 @@ i {
   }
 }
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif, "Times New Roman", Times, serif;
   font-size: 14px;
   color: #06281f;
 }
