@@ -5,4 +5,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"g2Hq":[function(require,module,exports) {
 "use strict";var i=require("./navigation"),n=require("./contentAnimation");function t(i){var n,t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:10,e=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];return function(){var r=this,l=arguments,a=e&&!n;clearTimeout(n),n=setTimeout(function(){n=null,e||i.apply(r,l)},t),a&&i.apply(r,l)}}var e=function(){var t=window.scrollY;(0,i.navTabs)(t),(0,n.scrollDisplayCard)(t),(0,n.slideArticleTitles)(t)};window.addEventListener("scroll",t(e));
 },{"./navigation":"vjt7","./contentAnimation":"SSB3"}]},{},["g2Hq"], null)
-//# sourceMappingURL=dogofriend_webpage/scripts.d3c51468.js.map
+//# sourceMappingURL=/scripts.d3c51468.js.map
