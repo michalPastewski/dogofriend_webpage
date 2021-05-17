@@ -1,15 +1,18 @@
 {
   "name": "dogofriend_webpage",
   "version": "1.0.0",
-  "description": "Webpage created for dogotherapy team.",
+  "description": "Webpage created for dog therapy team - Dogofirend.",
   "main": "index.js",
   "scripts": {
     "dev": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "build": "parcel build ./src/index.html",
+    "predeploy": "rm -rf dist && parcel build ./src/index.html --public-url dogofriend_webpage",
+    "deploy": "gh-pages -d dist"
   },
   "author": "_takt.mp Michal Pastewski",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.32.8"
   }
