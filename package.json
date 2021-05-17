@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "build": "parcel build ./src/index.html",
+    "predeploy": "rm -rf dist && parcel build --public-url ./",
+    "deploy": "gh-pages -d dist"
   },
   "author": "_takt.mp Michal Pastewski",
   "license": "ISC",
